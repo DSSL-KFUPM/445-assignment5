@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Visit Info Page </title>
+        <link rel="stylesheet" href="/visitors_residents_security_Style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    </head>
+    <body>
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="/">
+                <img src="/logo2.png" width="75" height="75" class="d-inline-block align-top">  
+            </a>
+            <p class="navbar-text"> <h1 class="display-4"> <%= type %> </h1></p>
+        </nav>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="/<%= url %>">Previous <%= accept %> </a>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"> 
+                    <a class="nav-link" href="/<%= home %>"> My Info </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/<%= url %>/new"> Create New Request </a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0" action="/logout">
+                <button class="btn btn-outline-success my-2 my-sm-0 text-light border-light" type="submit"> log out </button>
+            </form>
+        </nav>
+        <div class="jumbotron">
+            <% if (type == "Visitors") { %>
+                <h2> Visit was hosted by <%= visits.host %> <br> in <%= visits.date %> at <%= visits.time %> - <%= visits.destination %> </h2>
+            <% } %>
+            <% if (type == "Residents") { %>
+                <h2> You hosted visitor <%= visits.name %> with car <%= visits.car_make %> <%= visits.car_model %> <%= visits.plate_number %>
+                <br> in <%= visits.date %> at <%= visits.time %> - <%= visits.destination %> </h2>
+            <% } %>
+            <br>
+            <% if (visits.reservation != null) { %>
+                <h1> Reservation No.: <%= visits.reservation %></h1>
+            <% } %>   
+            <br> 
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <form action="/<%= url %>/<%= visits.id %>/edit">
+                    <button type="submit" class="btn btn-secondary btn-block bg-dark"> Edit </button>
+                </form>
+                <form action="/<%= url %>/<%= visits.id %>/?_method=DELETE" method="POST">
+                    <button type="submit" class="btn btn-secondary btn-block bg-dark"> Delete </button>
+                </form>
+                <form action="/<%= url %>">
+                    <button type="submit" class="btn btn-secondary btn-block bg-dark"> Back </button>
+                </form>
+              </div>
+        </div>
+    </body>
+</html>

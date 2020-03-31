@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Login Page </title>
+        <link rel="stylesheet" href="/visitors_residents_security_Style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    </head>
+    <body>
+        <div id="logregfast">
+            <form class="form-signin" action="/login" method="POST">
+                <a href="/"> <img class="mb-4" src="/logo2.png" class="img-fluid" alt=""> </a>
+                <h1 class="h3 mb-3 font-weight-normal"> Please sign in to VMS </h1>
+                <label for="input" class="sr-only"> username </label>
+                <input type="text" id="input" class="form-control" placeholder="username" name="username" required autofocus>
+                <label for="inputPassword" class="sr-only"> password </label>
+                <br>
+                <input type="password" id="inputPassword" class="form-control" placeholder="password" name="password" required>
+                <button class="btn btn-lg btn-secondary btn-block bg-dark" type="submit"> Sign in </button>
+            </form>
+            <div class="form-signin">
+                <a href="/register" class="text-dark"> Register </a>
+                <span> / </span>
+                <a href="/" class="text-dark"> Home </a>
+                <span> / </span>
+                <a href="/fast_check" class="text-dark"> Fast Check </a>
+            </div>
+        </div>
+    </body>
+</html>

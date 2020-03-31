@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Registration Page </title>
+        <link rel="stylesheet" href="/visitors_residents_security_Style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    </head>
+    <body>
+        <div id="logregfast">
+            <form class="form-signin" action="/register" method="POST">
+                <a href="/"> <img class="mb-1 img-fluid" src="/logo2.png" alt=""> </a>
+                <h1 class="h3 mb-1 font-weight-normal"> Please register to VMS </h1>
+                <label for="input" class="sr-only"> username </label>
+                <input type="input" id="input" class="form-control" name="username" placeholder="username" required autofocus>
+                <label for="input" class="sr-only"> Email Address </label>
+                <input type="email" id="input" class="form-control" name="email" placeholder="email" required autofocus>
+                <label for="inputPassword" class="sr-only"> password </label>
+                <input type="password" id="inputPassword" class="form-control" name="password" placeholder="password" required>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="type" id="inlineRadio1" value="visitorInfo">
+                    <label class="form-check-label" for="inlineRadio1"> Visitor </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="type" id="inlineRadio2" value="residentInfo">
+                    <label class="form-check-label" for="inlineRadio2"> Resident </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="type" id="inlineRadio3" value="visitsCurr">
+                    <label class="form-check-label" for="inlineRadio2"> Security </label>
+                </div>
+                <button class="btn btn-lg btn-secondary btn-block bg-dark" type="submit"> Sign up </button>
+            </form>
+            <div class="form-signin">
+                <a href="/login" class="text-dark"> Login </a>
+                <span> / </span>
+                <a href="/" class="text-dark"> Home </a>
+                <span> / </span>
+                <a href="/fast_check" class="text-dark"> Fast Check </a>
+            </div>
+        </div>
+    </body>
+</html>

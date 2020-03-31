@@ -1,0 +1,16 @@
+#midlinks {
+    margin: auto;
+    text-align: center;
+    width: 50%;
+    padding: 10px;
+}
+
+body {
+    background-image: url('background.jpg');
+    background-size: cover;
+    height: 100%;
+}
+
+.jumbotron {
+    opacity: 0.8;
+}
