@@ -1,0 +1,108 @@
+<%- include("./partial/header.ejs") %>
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	</head>
+	<!-- Navigation bar -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" style="font-size:2vw" href="/visits/"> 
+			<img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/98/King_Fahd_University_of_Petroleum_%26_Minerals_Logo.svg/1024px-King_Fahd_University_of_Petroleum_%26_Minerals_Logo.svg.png" alt="KFUPM logo" height=80>
+			Visiting Management System
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="http://www.kfupm.edu.sa" style="text-decoration: none;">KFUPM Home</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" style="text-decoration: none;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Visitors
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="#">Action</a>
+						<a class="dropdown-item" href="#">Another action</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="#">Something else here</a>
+					</div>
+				</li>
+			</ul>
+			<form class="form-inline my-2 my-lg-0">
+				<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+				<button class="btn-outline-success my-2 my-sm-0" type="submit" formaction="/logout">Logout</button>
+			</form>
+		</div>
+	</nav>    
+
+<!-- Visits -->	
+<div class="container">
+	<h1 style="text-align: center;">Visits</h1>
+	<h5 style="text-align: left;">Select request for more info</h5>
+	<table class="table" id="mytable">
+		<thead>
+			<tr>
+				<th scope="col">Name</th>
+				<th scope="col">Host</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% visits.forEach(function(visitor){ %>
+			<tr onclick="window.location='/visits/<%=visitor.name%>/<%=visitor.host%>';">
+				<td><%=visitor.name%></td>
+				<td><%=visitor.host%></td>
+			</tr>
+			<%})%>
+		</tbody>
+	</table>
+</div>
+
+<div class="wrapper" style="text-align: center;">
+  <form>
+	  <button formaction="/visits/new" class="btn btn-primary">New Request</button>
+	  <%if(role != "Resident"){%>
+	  <button formaction="/visits/check" class="btn btn-primary">Check In/Out</button>
+	  <%}%>
+   </form>
+</div>
+
+<style>
+input[type=text], select {
+width: 100%;
+padding: 12px 20px;
+margin: 8px 0;
+display: inline-block;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+}
+
+input[type=submit] {
+width: 100%;
+background-color: #4CAF50;
+color: white;
+padding: 14px 20px;
+margin: 8px 0;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+
+input[type=submit]:hover {
+background-color: #45a049;
+}
+
+div {
+border-radius: 5px;
+
+padding: 20px;
+}
+tbody tr:hover{
+	background-color: wheat;
+}
+</style>
+
+</html>

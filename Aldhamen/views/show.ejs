@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+	<!-- Navigation bar -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" style="font-size:2vw" href="/visits/"> 
+			<img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/98/King_Fahd_University_of_Petroleum_%26_Minerals_Logo.svg/1024px-King_Fahd_University_of_Petroleum_%26_Minerals_Logo.svg.png" alt="KFUPM logo" height=80>
+			Visiting Management System
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="http://www.kfupm.edu.sa" style="text-decoration: none;">KFUPM Home</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" style="text-decoration: none;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Visitors
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="#">Action</a>
+						<a class="dropdown-item" href="#">Another action</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="#">Something else here</a>
+					</div>
+				</li>
+			</ul>
+			<form class="form-inline my-2 my-lg-0">
+				<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+				<button class="btn-outline-success my-2 my-sm-0" type="submit" formaction="/logout">Logout</button>
+			</form>
+		</div>
+	</nav> 
+
+	<!-- Request Info -->	
+	<div class="container">
+		<h1 style="text-align: center;">Request Info</h1>
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">Name</th>
+					<th scope="col">Host</th>
+					<th scope="col">Date</th>
+					<th scope="col">Destination Building</th>
+					<th scope="col">Car Make</th>
+					<th scope="col">Car Model</th>
+					<th scope="col">Plate Number</th>
+					<th scope="col">Checked Out</th>
+					<th scope="col">Check in & Out Number</th>
+				</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><%= name%></td>
+						<td><%= host%></td>
+						<td><%= date%></td>
+						<td><%= destination%></td>
+						<td><%= car_make%></td>
+						<td><%= car_model%></td>
+						<td><%= plate_number%></td>
+						<td><%= checked_out%></td>
+						<td><%= check_number%></td>
+					</tr>
+				</tbody>
+			</table>
+	</div>
+
+	<div class="wrapper" style="text-align: center;">
+		<form action="/checks/<%=check_number%>" method="POST" id="form1"></form>
+		<form action="/visits/<%=name%>/<%=host%>/edit" id="form2"></form>
+		<form action="/visits/<%=name%>/<%=host%>/?_method=DELETE" method="POST" id="form3"></form>
+		<%if(access == true){%>
+			<button form="form1" class="btn btn-primary">Check In/Out</button>
+		<%}%>
+		<button form="form2" class="btn btn-primary">Edit Request</button>
+		<button form="form3" class="btn btn-primary">Delete Request</button>
+	</div>
+</body>
+</html>
