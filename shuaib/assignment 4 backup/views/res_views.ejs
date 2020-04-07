@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    Resident List
+
+  </title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body style="background-color:rgb(231, 255, 153);">
+    
+
+  <h2 style="text-align:center;">RESIDENTS </h2>
+<!-- <button onclick="getData()"> Fetch From Server </button> -->
+
+<lu id='roster'> </lu>
+
+<a href="/residents/new" style="text-align:center" class="btn btn-info margin: 0px 35%" style="padding-left: 35ch">Add new Resident</a></br>
+
+<table style="border: 1px solid black; width: 80%;margin-top: 20px;">
+   <thead>
+     <tr style="border: 1px solid black;">
+       <th>Name</th>
+       <th>Host</th>
+       <th>Date</th>
+       <th>Destination</th>
+       <th>Edit</th>
+       <th>Delete</th>
+     </tr>
+   </thead>
+   <tbody id='attendance' >
+    <% residents.forEach(function(visitor){ %>
+      <tr style="border: 1px solid black;">
+        <td><a href="/visitor/<%=visitor.name%>/shows"><%= visitor.name %></a></td>
+        <td><%= visitor.host %></td>
+        <td><%= visitor.date %></td>
+        <td><%= visitor.destination %></td>
+       <!---- <td><a href="/visitor/<%=visitor.name%>/edit">Edit</a></td> -->
+
+      <td> <a href="/visitor/<%=visitor.name%>/edit" role="button" class="btn btn-info"  >Edit</a></td> 
+
+        <form action="/visits/<%=visitor.name%>/?_method=DELETE" method="POST"  >
+          <td><button type="submit" class="btn btn-info" > Delete</button></td>
+        </form>
+        
+      </tr>
+      <%})%>
+   </tbody>
+</table>
+<ul > 
+
+ 
+</ul>
+</body>
+</html>

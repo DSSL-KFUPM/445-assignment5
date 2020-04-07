@@ -3,7 +3,7 @@
 
 <head>
     <title>
-        Visitor Page
+        Residents Page
     </title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -62,7 +62,7 @@
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSXbpeseau0E1YYT1BIsq53OBd4spjBTMZRxkmPSndZBNAnHLQH"
                 alt="" width="150" height="100" style="display: inline;">
             <h1 style="color:white;margin-top: -40px;">
-                <center><b>Visitors</b></center>
+                <center><b>Residents</b></center>
             </h1>
             <div style="text-align: right;margin-right: 20px;"><label class="btn" style="background: white;" for="logout"><a href="/logout">Logout</a></label></div>
         </header>
@@ -71,7 +71,7 @@
             <h2 style="color:black;">
                 <center><b>My Info</b></center>
             </h2>
-            <br> <br> 
+            <br> <br>
             <hr>
             <h2 style="color:black;">
                 <center><b>Create New Request</b></center>
@@ -79,7 +79,7 @@
             <br> <br><br><br><br> <br style="margin: 0px 10px;">
             <hr>
             <h2 style="color:black;">
-                <center><b>Previous Visits</b></center>
+                <center><b>Previous Guests</b></center>
             </h2>
         </nav>
         <main>
@@ -88,66 +88,66 @@
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTnWFPH9jOztJcq9Q9ewv3R5q-4Oe8bYL4LMjTOthz4Rq3eeDMd"
                     alt="">
 
-                <br> 
-                <h2 style="text-indent: 3em;" id="vistorName"><%= userName %> </h2>
+                <br>
+                <h2 style="text-indent: 3em;" id="residentName"><%= userName %> </h2>
             </p>
             <br>
-            <hr> 
-                <form name="myForm" id="myForm" action="/visitors" method="post" style="padding: 20px;">
-                    <div class="form-row" style="margin-top: 5px;margin-bottom: 5px;">
-                        
-                        <div class="col-md-4">
-                            <input type="text" class="form-control" placeholder="Host" id="host" name="host">
-                        </div>
-                        <div class="col-md-4">
-                            <input type="text" class="form-control" placeholder="Host Email" id="email" name="email">
-                        </div>
-                        <div class="col-md-4" hidden>
-                            <input type="text" class="form-control" value="<%= userName %>" placeholder="Name" id="name" name="name">
-                        </div>
+            <hr>
+            <form name="myForm" id="myForm" action="/residents" method="post" style="padding: 20px;">
+                <div class="form-row" style="margin-top: 5px;margin-bottom: 5px;">
 
+                    <div class="col-md-4" hidden>
+                        <input type="text" class="form-control" value="<%= userName %> " placeholder="Host" id="host"
+                            name="host">
                     </div>
-                    <div class="form-row" style="margin-top: 5px;margin-bottom: 5px;">
-                        <div class="col-md-4">
-                            <input type="text" class="form-control" placeholder="Destination Building" id="destination" name="destination">
-                        </div>
-                        <div class="col-md-4">
-                            <input type="date" class="form-control" placeholder="Date" id="date" name="date">
-                        </div>
-
-                    </div>
-                    <div class="form-row" style="margin-top: 5px;margin-bottom: 5px;">
-                        <div class="col-md-4">
-                            <input type="text" class="form-control" placeholder="time" id="time" name="time">
-                        </div>
-
-                        <div class="col-md-4">
-                            <input type="text" class="form-control" placeholder="Car make" id="car_make" name="car_make">
-                        </div>
-                    </div>
-                    <div class="form-row" style="margin-top: 5px;margin-bottom: 5px;" style="float: center;">
-
-                        <div class="col-md-4">
-                            <input type="text" class="form-control" placeholder="Car Model" id="car_model" name="car_model">
-                        </div>
-                        <div class="col-md-4">
-                            <input type="text" class="form-control" placeholder="Plate Number" id="plate_number" name="plate_number">
-                        </div>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" placeholder="Name" id="name" name="name">
                     </div>
 
-                    <div class="form-row" style="margin-top: 5px;margin-bottom: 5px;"> <button type="submit"
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" placeholder="Destination Building" id="destination"
+                            name="destination">
+                    </div>
+                </div>
+                <div class="form-row" style="margin-top: 5px;margin-bottom: 5px;">
+                    <div class="col-md-4">
+                        <input type="date" class="form-control" placeholder="Date" id="date" name="date">
+                    </div>
+
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" placeholder="time" id="time" name="time">
+                    </div>
+                </div>
+                <div class="form-row" style="margin-top: 5px;margin-bottom: 5px;">
+
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" placeholder="Car make" id="car_make" name="car_make">
+                    </div>
+
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" placeholder="Car Model" id="car_model" name="car_model">
+                    </div>
+                </div>
+                <div class="form-row" style="margin-top: 5px;margin-bottom: 5px;" style="float: center;">
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" placeholder="Plate Number" id="plate_number"
+                            name="plate_number">
+                    </div>
+                </div>
+
+                <div class="form-row" style="margin-top: 5px;margin-bottom: 5px;"> <button type="submit"
                         style="background-color:  rgb(0, 175, 102); width: 30%"><b>Submit</b></button></div>
-                </form>
+            </form>
 
             </p>
-            <p >
+            <p>
                 <div class="visitInfo" style="margin-left:10px;">
                     <table class="table table-stripped" border="1" style="width: 120%;">
 
                         <thead style="background-color:gray; text-align: center; ">
                             <tr>
-                                <th text-align: center;">Host</th>
-                                <th text-align: center;">Token No</th>
+                                <!-- <th text-align: center;">Host</th> -->
+                                <th text-align: center;">Name</th>
                                 <th text-align: center;">Date</th>
                                 <th text-align: center;">Time</th>
                                 <th text-align: center;">Destination</th>
@@ -158,18 +158,18 @@
                             </tr>
                         </thead>
                         <tbody id="visitInfodata" style="background-color:rgb(180, 203, 223);  ">
-                            <% visitors.forEach(function(visitor){ %>
+                            <% residents.forEach(function(resident){ %>
                             <tr style="border: 1px solid black;">
-                                <!-- <td><a href="/visitor/<%=visitor.name%>/shows"><%= visitor.name %></a></td> -->
-                                <td><%= visitor.host %></td>
-                                <td><%= visitor.token_no %></td>
-                                <td><%= visitor.date.getDate(); %>/<%= visitor.date.getMonth(); %>/<%= visitor.date.getFullYear(); %></td>
-                                <td><%= visitor.time %></td>
-                                <td><%= visitor.destination %></td>
-                                <td><%= visitor.car_make %></td>
-                                <td><%= visitor.car_model %></td>
-                                <td><%= visitor.plate_number %></td>
-                                <td><%= visitor.checked_out %></td>
+                                <!-- <td><a href="/resident/<%=resident.host%>/shows"><%= resident.host %></a></td> -->
+                                <td><%= resident.name %></td>
+                                <td><%= resident.date.getDate(); %>/<%= resident.date.getMonth(); %>/<%= resident.date.getFullYear(); %>
+                                </td>
+                                <td><%= resident.time %></td>
+                                <td><%= resident.destination %></td>
+                                <td><%= resident.car_make %></td>
+                                <td><%= resident.car_model %></td>
+                                <td><%= resident.plate_number %></td>
+                                <td><%= resident.checked_out %></td>
                             </tr>
                             <%})%>
                         </tbody>

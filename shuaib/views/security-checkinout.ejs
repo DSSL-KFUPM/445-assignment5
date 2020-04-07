@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        hr {
+            display: block;
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+            margin-left: auto;
+            margin-right: auto;
+            border-style: inset;
+            border-width: 1px;
+            background-color: black;
+        }
+
+        header {
+            grid-area: header;
+            background-color: rgb(108, 114, 114);
+        }
+
+        nav {
+            grid-area: nav;
+            background-color: rgb(108, 114, 114);
+        }
+
+        main {
+            grid-area: main;
+            background-color: white;
+        }
+
+        aside {
+            grid-area: aside;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSXbpeseau0E1YYT1BIsq53OBd4spjBTMZRxkmPSndZBNAnHLQH"
+                alt="" width="150" height="100" style="display: inline;">
+            <h1 style="color:white">
+                <center><b>Security</b></center>
+            </h1>
+            <div style="text-align: right;margin-right: 20px;"><label class="btn" style="background: white;"
+                    for="logout"><a href="/logout">Logout</a></label></div>
+        </header>
+        <main>
+            <div style="width: 50%; margin: 0px 25%;">
+                <table class="table table-stripped" border="1" style="width: 100%;">
+                    <thead align="center">
+                        <th colspan="2">Token <%= visitor.token_no %> Information</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="width: 40%;">Name</td>
+                            <td><%= visitor.name %></td>
+                        </tr>
+                        <tr>
+                            <td>Host</td>
+                            <td><%= visitor.host %></td>
+                        </tr>
+                        <tr>
+                            <td>Destination</td>
+                            <td><%= visitor.destination %></td>
+                        </tr>
+                        <tr>
+                            <td>Date</td>
+                            <td><%= visitor.date.getDate(); %>/<%= visitor.date.getMonth(); %>/<%= visitor.date.getFullYear(); %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Time</td>
+                            <td><%= visitor.time %></td>
+                        </tr>
+                        <tr>
+                            <td>Car Make</td>
+                            <td><%= visitor.car_make %></td>
+                        </tr>
+                        <tr>
+                            <td>Car Model</td>
+                            <td><%= visitor.car_model %></td>
+                        </tr>
+                        <tr>
+                            <td>Plate Number</td>
+                            <td><%= visitor.plate_number %></td>
+                        </tr>
+
+                        <tr>
+                            <td>Checked In</td>
+                            <td><%= visitor.checked_in %></td>
+                        </tr>
+
+                        <tr>
+                            <td>Checked Out</td>
+                            <td><%= visitor.checked_out %></td>
+                        </tr>
+                        <tr align="center">
+                            <form action="/security/check-in-out" method="POST" style="margin-top: 20px;">
+                                <input type="text" value="<%= visitor._id %>" name="_id" id="_id" hidden />
+                                <input type="text" value="<%= visitor.checked_in %>" name="checked_in" id="checked_in" hidden />
+                                <input type="text" value="<%= visitor.token_no %>" name="token_no" id="token_no" hidden />
+                                <input type="text" value="<%= visitor.name %>" name="name" id="name" hidden />
+                                <input type="text" value="<%= visitor.email %>" name="email" id="email" hidden />
+                                <input type="text" value="<%= visitor.checked_out %>" name="checked_out" id="checked_out" hidden />
+                                
+                                <td colspan="2"><button type="submit"><%= buttonTitle %></button></td>
+                            </form>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

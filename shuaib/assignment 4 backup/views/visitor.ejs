@@ -99,37 +99,34 @@
                         <div class="col-md-4">
                             <input type="text" class="form-control" placeholder="Host" id="host" name="host">
                         </div>
-                        <div class="col-md-4">
-                            <input type="text" class="form-control" placeholder="Host Email" id="email" name="email">
-                        </div>
                         <div class="col-md-4" hidden>
-                            <input type="text" class="form-control" value="<%= userName %>" placeholder="Name" id="name" name="name">
+                            <input type="text" class="form-control" value="<%= userName %> " placeholder="Name" id="name" name="name">
                         </div>
 
-                    </div>
-                    <div class="form-row" style="margin-top: 5px;margin-bottom: 5px;">
                         <div class="col-md-4">
                             <input type="text" class="form-control" placeholder="Destination Building" id="destination" name="destination">
                         </div>
+                    </div>
+                    <div class="form-row" style="margin-top: 5px;margin-bottom: 5px;">
                         <div class="col-md-4">
                             <input type="date" class="form-control" placeholder="Date" id="date" name="date">
                         </div>
 
-                    </div>
-                    <div class="form-row" style="margin-top: 5px;margin-bottom: 5px;">
                         <div class="col-md-4">
                             <input type="text" class="form-control" placeholder="time" id="time" name="time">
                         </div>
+                    </div>
+                    <div class="form-row" style="margin-top: 5px;margin-bottom: 5px;">
 
                         <div class="col-md-4">
                             <input type="text" class="form-control" placeholder="Car make" id="car_make" name="car_make">
                         </div>
-                    </div>
-                    <div class="form-row" style="margin-top: 5px;margin-bottom: 5px;" style="float: center;">
 
                         <div class="col-md-4">
                             <input type="text" class="form-control" placeholder="Car Model" id="car_model" name="car_model">
                         </div>
+                    </div>
+                    <div class="form-row" style="margin-top: 5px;margin-bottom: 5px;" style="float: center;">
                         <div class="col-md-4">
                             <input type="text" class="form-control" placeholder="Plate Number" id="plate_number" name="plate_number">
                         </div>
@@ -147,7 +144,7 @@
                         <thead style="background-color:gray; text-align: center; ">
                             <tr>
                                 <th text-align: center;">Host</th>
-                                <th text-align: center;">Token No</th>
+                                <!-- <th text-align: center;">Name</th> -->
                                 <th text-align: center;">Date</th>
                                 <th text-align: center;">Time</th>
                                 <th text-align: center;">Destination</th>
@@ -162,7 +159,6 @@
                             <tr style="border: 1px solid black;">
                                 <!-- <td><a href="/visitor/<%=visitor.name%>/shows"><%= visitor.name %></a></td> -->
                                 <td><%= visitor.host %></td>
-                                <td><%= visitor.token_no %></td>
                                 <td><%= visitor.date.getDate(); %>/<%= visitor.date.getMonth(); %>/<%= visitor.date.getFullYear(); %></td>
                                 <td><%= visitor.time %></td>
                                 <td><%= visitor.destination %></td>

@@ -11,9 +11,7 @@ module.exports = {
   getVisitorsByHost,
   previousVisitors,
   currentVisitors,
-  checkoutVisit,
-  checkInVisit,
-  searchVisitByToken,
+  checkoutVisit
 };
 
 async function getAll() {
@@ -60,25 +58,11 @@ async function previousVisitors() {
 }
 
 async function currentVisitors() {
-  return await Visitor.find({ checked_in: "YES", checked_out: "NO" }).select(
-    "-hash"
-  );
-}
-
-async function searchVisitByToken(token_no) {
-  return await Visitor.find({ token_no: token_no }).select("-hash");
-}
-
-async function checkInVisit(id) {
-  Visitor.findById(id, function (err, doc) {
-    if (err) return;
-    doc.checked_in = "YES";
-    doc.save();
-  });
+  return await Visitor.find({ checked_out: "NO" }).select("-hash");
 }
 
 async function checkoutVisit(id) {
-  Visitor.findById(id, function (err, doc) {
+  Visitor.findById(id, function(err, doc) {
     if (err) return;
     doc.checked_out = "YES";
     doc.save();

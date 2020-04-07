@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="index.js"></script>
+    <style>
+        hr {
+            display: block;
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+            margin-left: auto;
+            margin-right: auto;
+            border-style: inset;
+            border-width: 1px;
+            background-color: black;
+            color: black;
+        }
+
+        header {
+            grid-area: header;
+            background-color: rgb(108, 114, 114);
+        }
+
+        nav {
+            grid-area: nav;
+            background-color: rgb(108, 114, 114);
+        }
+
+        main {
+            grid-area: main;
+            background-color: white;
+        }
+
+        aside {
+            grid-area: aside;
+            background-color: white;
+        }
+
+        .container {
+            display: grid;
+            grid-template-rows: 1fr 5fr 0fr;
+            grid-template-columns: 2fr 10fr 3fr;
+            grid-template-areas:
+                "header header header"
+                "nav main aside"
+                "footer footer footer";
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSXbpeseau0E1YYT1BIsq53OBd4spjBTMZRxkmPSndZBNAnHLQH"
+                alt="" width="150" height="100" style="display: inline;">
+            <h1 style="color:white">
+                <center><b>Residents</b></center>
+            </h1>
+        </header>
+        <nav>
+            <hr>
+            <h2 style="color:black;">
+                <center><b>My Info</b></center>
+            </h2>
+            <br> <br> <br> <br>
+            <hr>
+
+            <h2 style="color:black;">
+                <center><b>Create New Requests</b></center>
+            </h2>
+            <br> <br> <br> <br><br> <br><br> <br><br><br><br> <br style="margin: 0px 10px;">
+            <hr>
+            <h2 style="color:black;">
+                <center><b>Previous guests</b></center>
+            </h2>
+        </nav>
+        <main>
+            <p>
+                <img style="padding : 0 1px; float: left" width="175" height="170"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTnWFPH9jOztJcq9Q9ewv3R5q-4Oe8bYL4LMjTOthz4Rq3eeDMd"
+                    alt="">
+                <br> <br> <br>
+                <h2 style="text-indent: 3em" , id="residentName"></h2>
+            </p>
+            <br>
+            <hr><br> <br style="width: min-content;">
+            <a href="/residents/visits/" ; style="text-align:center" ; role=button
+                class="btn btn-info margin: 0px 35%" style="padding-left: 35ch">DISPLAY RESIDENT LIST</a>
+            <p>
+                <form>
+                    <div class="form-row">
+
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Car Model" id="car_model">
+                        </div>
+
+                        <div class="col" style="padding-left: 35ch;">
+                            <input type="text" class="form-control" placeholder="Year" id="year">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-row">
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Destination Building" id="destination">
+                        </div>
+
+                        <div class="col" style="padding-left: 35ch;">
+                            <input type="text" class="form-control" placeholder="Duration of visit" id="duration">
+                        </div>
+                    </div>
+                </form>
+                <p style="padding-left: 35ch"> <button style="background-color:  rgb(0, 175, 102); width: 30%"
+                        onclick="CreateTableFromJSON()"><b>submit</b></button> </p>
+            </p>
+            <br>
+            <div id="demo">
+                <table class="table table-stripped" border="1">
+                    <thead style="background-color:gray; text-align: center">
+                        <th>Car Model</th>
+                        <th>Year</th>
+                        <th>Destination</th>
+                        <th>Visit Duration</th>
+                    </thead>
+                    <tbody id="getTable" style="background-color:rgb(226, 158, 132)">
+
+                    </tbody>
+                </table>
+            </div> <br><br> <br><br>
+
+            <p style="padding-left: 20ch;">
+                <div class="residentInfo">
+                    <table class="table table-stripped" border="1" style="width: 15cm;">
+                        <tbody id="residentInfoData" style="background-color:rgb(180, 203, 223);  ">
+
+                            <thead style="background-color:gray; text-align: center">
+
+                                <tr>
+                                    <th text-align: center;">Host</th>
+                                    <th text-align: center;">Name</th>
+                                    <th text-align: center;">Date</th>
+                                    <th text-align: center;">Time</th>
+                                    <th text-align: center;">Destination</th>
+                                    <th text-align: center;">Car Make</th>
+                                    <th text-align: center;">Car Model</th>
+                                    <th text-align: center;">Plate Number</th>
+                                    <th text-align: center;">Checked Out</th>
+                                </tr>
+                            </thead>
+
+                        </tbody>
+                    </table>
+                </div>
+            </p>
+        </main>
+        <aside></aside>
+    </div>
+
+    <script>
+        function CreateTableFromJSON() {
+
+            var car_model = document.getElementById("car_model").value;
+            var year = document.getElementById("year").value;
+            var destination = document.getElementById("destination").value;
+            var duration = document.getElementById("duration").value;
+
+            var temp = "";
+            temp += "<tr>";
+            temp += "<td>" + car_model;
+            temp += "<td>" + year;
+            temp += "<td>" + destination;
+            temp += "<td>" + duration;
+            temp += "<tr>";
+            document.getElementById("getTable").innerHTML = temp;
+        }
+    </script>
+</body>
+
+</html>

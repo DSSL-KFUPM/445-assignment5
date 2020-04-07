@@ -60,15 +60,14 @@
             <h1 style="color:white">
                 <center><b>Security</b></center>
             </h1>
-            <div style="text-align: right;margin-right: 20px;"><label class="btn" style="background: white;"
-                    for="logout"><a href="/logout">Logout</a></label></div>
+            <div style="text-align: right;margin-right: 20px;"><label class="btn" style="background: white;" for="logout"><a href="/logout">Logout</a></label></div>
         </header>
         <nav>
-            <hr> <br> <br> <br>
+            <hr> <br> <br> <br> <br>
             <h2 style="color:black;">
                 <center><b>Current Visitors</b></center>
             </h2>
-            <br> <br> <br><br>
+            <br> <br> <br>
             <hr> <br>
             <h2 style="color:black;">
                 <center><b>Previous Visits</b></center>
@@ -76,32 +75,10 @@
             <br> <br> <br>
         </nav>
         <main>
+
             <p>
                 <div class="secuirityInfo">
-                    <table class="table table-stripped" border="1" style="width: 100%">
-                        <thead style="background-color:gray; text-align: center">
-                            <tr>
-                                <th text-align: center;">Search Visit with Token number for Checkin or Checkout</th>
-                            </tr>
-                        </thead>
-                        <tbody id="currentVisitors" style="background-color:rgb(180, 203, 223)">
-
-                            <tr style="border: 1px solid black;" align="center">
-                                <td>
-                                    <form action="/security/search" method="POST">
-                                        <input type="text" id="token" name="token" placeholder="Enter Token No" />
-                                        <button type="submit">Submit</button>
-                                    </form>
-                                </td>
-                            </tr>
-
-                        </tbody>
-                    </table>
-                </div>
-            </p>
-            <p>
-                <div class="secuirityInfo">
-                    <table class="table table-stripped" border="1" style="width: 100%">
+                    <table class="table table-stripped" border="1" style="width: 15cm">
                         <thead style="background-color:gray; text-align: center">
                             <tr>
                                 <th text-align: center;">Host</th>
@@ -120,22 +97,19 @@
                             <tr style="border: 1px solid black;">
                                 <td><%= visitor.host %></td>
                                 <td><%= visitor.name %></td>
-                                <td><%= visitor.date.getDate(); %>/<%= visitor.date.getMonth(); %>/<%= visitor.date.getFullYear(); %>
-                                </td>
+                                <td><%= visitor.date.getDate(); %>/<%= visitor.date.getMonth(); %>/<%= visitor.date.getFullYear(); %></td>
                                 <td><%= visitor.time %></td>
                                 <td><%= visitor.destination %></td>
                                 <td><%= visitor.car_make %></td>
                                 <td><%= visitor.car_model %></td>
                                 <td><%= visitor.plate_number %></td>
-                                <td><a href="/security/<%=visitor._id%>"> <%= visitor.checked_out %> :: Checkout</a>
-                                </td>
+                                <td><a href="/security/<%=visitor._id%>"> <%= visitor.checked_out %> :: Checkout</a></td>
                             </tr>
                             <%})%>
                         </tbody>
                     </table>
                 </div>
             </p>
-            <br>
             <br>
             <hr> <br>
             <p style="padding-left: 20ch;">
@@ -158,8 +132,7 @@
                         <tr style="border: 1px solid black;">
                             <td><%= visitor.host %></td>
                             <td><%= visitor.name %></td>
-                            <td><%= visitor.date.getDate(); %>/<%= visitor.date.getMonth(); %>/<%= visitor.date.getFullYear(); %>
-                            </td>
+                            <td><%= visitor.date.getDate(); %>/<%= visitor.date.getMonth(); %>/<%= visitor.date.getFullYear(); %></td>
                             <td><%= visitor.time %></td>
                             <td><%= visitor.destination %></td>
                             <td><%= visitor.car_make %></td>
