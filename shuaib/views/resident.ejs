@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        Residents Page
+    </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        hr {
+            display: block;
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+            margin-left: auto;
+            margin-right: auto;
+            border-style: inset;
+            border-width: 1px;
+            background-color: black;
+        }
+
+        header {
+            grid-area: header;
+            background-color: rgb(108, 114, 114);
+        }
+
+        nav {
+            grid-area: nav;
+            background-color: rgb(108, 114, 114);
+        }
+
+        main {
+            grid-area: main;
+            background-color: white;
+        }
+
+        aside {
+            grid-area: aside;
+            background-color: white;
+        }
+
+
+        .container {
+            display: grid;
+            grid-template-columns: 2fr 10fr 3fr;
+            grid-template-areas:
+                "header header header"
+                "nav main aside"
+                "footer footer footer";
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSXbpeseau0E1YYT1BIsq53OBd4spjBTMZRxkmPSndZBNAnHLQH"
+                alt="" width="150" height="100" style="display: inline;">
+            <h1 style="color:white;margin-top: -40px;">
+                <center><b>Residents</b></center>
+            </h1>
+            <div style="text-align: right;margin-right: 20px;"><label class="btn" style="background: white;" for="logout"><a href="/logout">Logout</a></label></div>
+        </header>
+        <nav>
+            <hr>
+            <h2 style="color:black;">
+                <center><b>My Info</b></center>
+            </h2>
+            <br> <br>
+            <hr>
+            <h2 style="color:black;">
+                <center><b>Create New Request</b></center>
+            </h2>
+            <br> <br><br><br><br> <br style="margin: 0px 10px;">
+            <hr>
+            <h2 style="color:black;">
+                <center><b>Previous Guests</b></center>
+            </h2>
+        </nav>
+        <main>
+            <p>
+                <img style="padding : 0 1px; float: left" width="125" height="100"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTnWFPH9jOztJcq9Q9ewv3R5q-4Oe8bYL4LMjTOthz4Rq3eeDMd"
+                    alt="">
+
+                <br>
+                <h2 style="text-indent: 3em;" id="residentName"><%= userName %> </h2>
+            </p>
+            <br>
+            <hr>
+            <form name="myForm" id="myForm" action="/residents" method="post" style="padding: 20px;">
+                <div class="form-row" style="margin-top: 5px;margin-bottom: 5px;">
+
+                    <div class="col-md-4" hidden>
+                        <input type="text" class="form-control" value="<%= userName %> " placeholder="Host" id="host"
+                            name="host">
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" placeholder="Name" id="name" name="name">
+                    </div>
+
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" placeholder="Destination Building" id="destination"
+                            name="destination">
+                    </div>
+                </div>
+                <div class="form-row" style="margin-top: 5px;margin-bottom: 5px;">
+                    <div class="col-md-4">
+                        <input type="date" class="form-control" placeholder="Date" id="date" name="date">
+                    </div>
+
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" placeholder="time" id="time" name="time">
+                    </div>
+                </div>
+                <div class="form-row" style="margin-top: 5px;margin-bottom: 5px;">
+
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" placeholder="Car make" id="car_make" name="car_make">
+                    </div>
+
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" placeholder="Car Model" id="car_model" name="car_model">
+                    </div>
+                </div>
+                <div class="form-row" style="margin-top: 5px;margin-bottom: 5px;" style="float: center;">
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" placeholder="Plate Number" id="plate_number"
+                            name="plate_number">
+                    </div>
+                </div>
+
+                <div class="form-row" style="margin-top: 5px;margin-bottom: 5px;"> <button type="submit"
+                        style="background-color:  rgb(0, 175, 102); width: 30%"><b>Submit</b></button></div>
+            </form>
+
+            </p>
+            <p>
+                <div class="visitInfo" style="margin-left:10px;">
+                    <table class="table table-stripped" border="1" style="width: 120%;">
+
+                        <thead style="background-color:gray; text-align: center; ">
+                            <tr>
+                                <!-- <th text-align: center;">Host</th> -->
+                                <th text-align: center;">Name</th>
+                                <th text-align: center;">Date</th>
+                                <th text-align: center;">Time</th>
+                                <th text-align: center;">Destination</th>
+                                <th text-align: center;">Car Make</th>
+                                <th text-align: center;">Car Model</th>
+                                <th text-align: center;">Plate Number</th>
+                                <th text-align: center;">Checked Out</th>
+                            </tr>
+                        </thead>
+                        <tbody id="visitInfodata" style="background-color:rgb(180, 203, 223);  ">
+                            <% residents.forEach(function(resident){ %>
+                            <tr style="border: 1px solid black;">
+                                <!-- <td><a href="/resident/<%=resident.host%>/shows"><%= resident.host %></a></td> -->
+                                <td><%= resident.name %></td>
+                                <td><%= resident.date.getDate(); %>/<%= resident.date.getMonth(); %>/<%= resident.date.getFullYear(); %>
+                                </td>
+                                <td><%= resident.time %></td>
+                                <td><%= resident.destination %></td>
+                                <td><%= resident.car_make %></td>
+                                <td><%= resident.car_model %></td>
+                                <td><%= resident.plate_number %></td>
+                                <td><%= resident.checked_out %></td>
+                            </tr>
+                            <%})%>
+                        </tbody>
+                    </table>
+                </div>
+            </p>
+        </main>
+        <!-- <aside> </aside> -->
+    </div>
+</body>
+
+</html>
