@@ -1,10 +1,9 @@
 
-How to run?
-	-As soon the server is fired
-		type " localhost:2000/visitor.html " for visitor part 
-			and
-		type " localhost:2000/resident.html" for resident part
-	-port number used: 2000
+Login to https://mailtrap.io/
+Username: shuaib97@gmail.com
+Password: vmsapp
+for the implementation of the notification feature
+
 
 
 For error:
@@ -15,5 +14,4 @@ solution:
 	C:\Windows\System32>taskkill /F /IM node.exe
 	SUCCESS: The process "node.exe" with PID 11008 has been terminated.
 
-Note:
-You cannot edit/update the "Name" of the visitor/resident.Only other information related to the visitor/resident is editable eg Host, Destination ,Time etc 
+Note: Check out "Sample Testing" word file.
