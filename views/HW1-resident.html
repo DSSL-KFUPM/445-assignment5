@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Residents</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="HW1-style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="chrome-extension://mooikfkahbdckldjjndioackbalphokd/assets/prompt.js"></script>
+    <script src="myjs.js"></script>
+
+
+    <nav class="navbar navbar-trans navbar-expand-lg navbar-light bg-dark ">
+        <a class="navbar-brand" href=""><a href="HW1-Index.html"><img src="KFUPM-logo.png" width="50" height="50" class="d-inline-block align-center" alt="" href=""></a>&emsp;<strong id="text">Residents</strong></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+
+            </ul>
+        </div>
+    </nav>
+
+    <br>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row">
+            <div id="left" class="col-lg-2">
+                <div class="row">
+                    <div class="col text-center">
+                        <br><br><br><br>
+                        <p>My Info</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col text-center">
+                        <br><br><br><br><br>
+                        <p>Creat new Request</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col text-center">
+                        <br><br><br><br><br><br><br><br><br>
+                        <p>Previous Visits</p>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <div id="right" class="col-lg-9">
+                <div class="row">
+                    <img id="imgs" src="https://www.screengeek.net/wp-content/uploads/2019/12/avengers-endgame-thanos-snap.jpg" ; width="200px" ;>
+                    <div class="col text-center">
+                        <br><br><br><br>
+                        <p> Name : Majid Yazeed</p>
+                    </div>
+                </div>
+                <hr>
+                <!--            information form of the car-->
+                <div class="row">
+                    <div class="col text-center">
+
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label for=">Car Model">Car Model</label>
+                                    <input type="text" class="form-control" id=">Car Model" value="Accent">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="Car Maker">Car Maker</label>
+                                    <input type="text" class="form-control" id="Car Maker" value="Hyundai">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="caryear">Car Year</label>
+                                    <input type="text" class="form-control" id="car year" value="1999">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-4 mb-3">
+                                    <label for="Destination">Destination</label>
+                                    <input type="text" class="form-control" id="Destination" value="Building 1">
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="Visit Time">Visit Time</label>
+                                    <input type="text" class="form-control" id="Visit Time" value="12:00PM">
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="Visit Duration ">Visit Date </label>
+                                    <input type="text" class="form-control" id="date" value="12/12/2012">
+                                </div>
+                            </div>
+                            <div class="form-row text-center justify-content-center">
+
+                                <div class="col-md-4 mb-3">
+                                    <label for="Visit Duration ">Vistor Name? </label>
+                                    <input type="text" class="form-control" id="Vname" value="Thanos">
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="Visit Duration ">Plate number </label>
+                                    <input type="text" class="form-control" id="Plate number" value="EXT000">
+                                </div>
+                            </div>
+                            <div class="col text-center">
+                                <button type="button" class="btn btn-primary" onclick="Request('Saeed Saad')">Rquest</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+                <hr>
+
+                <!--            previous visits  -->
+                <div class="row">
+                    <div class="col text-center">
+
+                        <table class="table table-striped table-dark">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Destination</th>
+                                    <th scope="col">Entering Time</th>
+                                    <th scope="col">Plate Number</th>
+                                    <th scope="col">Date</th>
+                                </tr>
+                            </thead>
+                            <tbody id="rows">
+                                <!--
+    <tr>
+      <th scope="row">1</th>
+    <td>Sonic The Hedgehog</td>
+      <td>Building 24</td>
+      <td>02:00 <span style="color: blueviolet">pm</span></td>
+      <td>04:00 <span style="color: ">pm</span></td>
+    <td>1/1/2010 </td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+            <td>Sonic The Hedgehog</td>
+        <td>Building 11</td>
+      <td>12:00 <span style="color: blueviolet">pm</span></td>
+      <td>03:30 <span style="color: blueviolet">pm</span></td>
+        <td>2/1/2010 </td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+            <td>Sonic The Hedgehog</td>
+      <td>Building 846</td>
+      <td>04:00 <span style="color: blueviolet">pm</span></td>
+      <td>11:00 <span style="color: blueviolet">pm</span></td>
+        <td>3/1/2010 </td>
+    </tr>
+-->
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <br>
+            </div>
+        </div>
+
+    </div>
+    <br>
+</body>
+
+
+<script>
+    refresh("host", "Majid Yazeed", "name", false)
+
+</script>
+
+</html>

@@ -1,0 +1,106 @@
+
+    
+    body{
+            background: url(/imgs/clouds.jpg);
+            background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+            
+        }
+        .jumbotron{
+            background-color: rgba(10,10,20,.3);
+            background-size: cover;
+            background-position: right;
+        }
+        #center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        }
+        #Greetings{
+            font-size: 50px;
+            text-align: center;
+            color: darkslategray;
+            text-shadow: 0px 0px 4px aquamarine;
+            
+
+        }
+      }
+        #button{
+        padding-top: 33%;
+            text-align: center;
+            color: aliceblue;
+        
+        }
+        #text, #text2{
+            color: aliceblue;
+        }
+        #left{
+/*          background-color: rgba(4,97,251,.3)*/
+            background-color: rgba(245,245,245,1);
+            
+        }
+        #right{
+/*            background-color: rgba(4,97,251,.3)*/
+            background-color: rgba(245,245,245,0.4);
+             
+        }
+        #imgs{
+            padding-left: 50px;
+            padding-top: 50px
+        }
+        form{
+            padding-left: 30px;
+        }
+         #rows2 tr:hover,#rows tr:hover{
+/*            border-style: solid;*/
+/*            border-width: thick;*/
+/*            border-color: azure;*/
+            background-color: cadetblue;
+             cursor: pointer;
+
+        }
+        #rows1 tr:hover{
+            background-color: darkgrey; 
+            cursor: pointer;    
+        }
+        .navbar-trans {
+            background-color: rgba(0,0,0,.4) !important
+        }
+        #current tr{
+            background-color:cadetblue;
+            border-color:aquamarine;
+        }
+        
+#text ,#text2{
+    text-shadow: 0px 0px 4px white;
+}
+#email, #password {
+    color: azure;
+    text-shadow: 0px 0px 3px white;
+    
+}
+
+.glow {
+  
+  color: #fff;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+    color: cornflowerblue
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 100px 0 20px #fff, 0 0 30px cadetblue, 0 0 40px cadetblue, 0 0 50px cadetblue, 0 0 60px cadetblue, 0 0 70px cadetblue;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px cornflowerblue, 0 0 40px cornflowerblue, 0 0 50px cornflowerblue, 0 0 60px cornflowerblue, 0 0 70px cornflowerblue, 0 0 80px cornflowerblue;
+  }
+}
+
+#current{
+    table-layout: fixed;
+}
