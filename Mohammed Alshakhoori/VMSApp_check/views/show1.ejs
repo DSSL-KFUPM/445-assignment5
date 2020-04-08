@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    COE 445
+  </title>
+
+  <style>
+    * {
+     box-sizing: border-box;
+   }
+   .img {
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     width: 30%;
+   }
+   .img1 {
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     width: 10%;
+   }
+   
+   H1{
+   text-align: center;
+   }
+   .columnheader {
+     float: left;
+     padding: 10px;
+     background-color: darkgreen;
+     color: white;
+     text-align: center;
+   }
+   .column {
+     float: left;
+     padding: 30px;
+    
+   }
+   .left {
+     line-height: 26pt;
+     width: 15%;
+     background-color: royalblue;
+     color: white;
+      text-align: left;
+   }
+   
+   .rightheader {
+     width: 85%; 
+     background-color: royalblue;
+   }
+   .right {
+     width: 85%; 
+     border: 2.5px solid rgb(70, 108, 221);
+     
+   }
+   
+   .left1 {
+     width: 50%; 
+     background-color:  rgb(70, 108, 221);
+   }
+   .right1 {
+     width: 50%;
+     background-color:  rgb(70, 108, 221);
+   }
+   
+   .button {
+     background-color: white;
+      border: 3px solid  rgb(70, 108, 221);
+     width: 100%;
+   }
+   .button:hover {
+     background-color: rgb(220, 220, 220)
+   ;
+     color: white;
+   }
+   
+   .row:after {
+     content: "";
+     display: table;
+     clear: both;
+   }
+   table{
+     color:  rgb(70, 108, 221);
+       width:100%;
+   }
+   table, th, td {
+     border: 3px solid  rgb(70, 108, 221);
+     border-collapse: collapse;
+   }
+   th, td {
+     padding: 5px;
+     text-align: left;
+   }
+   button {
+     background-color: white;
+      border: 3px solid rgb(70, 108, 221);
+     width: 100%;
+   }
+   button:hover {
+     background-color: rgb(220, 220, 220)
+   ;
+     color: white;
+   }
+         </style>
+  <link rel="stylesheet" type="text/css" href="resident.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container-fluid">
+
+    <div class="row">
+
+ <div class="columnheader left">
+
+  <img class="img" src="https://faculty.kfupm.edu.sa/AE/fifis/logokfupm.gif" alt="Kfupm">  
+ </div>
+
+ <div class="columnheader rightheader">
+   <h2>residents Page</h2>
+ </div>
+
+</div>
+
+
+
+ <div class="row">
+ <div class="column left">  
+ <h1> residents info:</h1>  
+ </div>
+ <div class="column right">
+ 
+<table>
+  <tr>
+    <th>Host</th>
+    <th>Name</th>
+    <th>Date</th>
+    <th>Destination Building</th>
+    <th>Car Make</th>
+    <th>Car Model</th>
+    <th>Car Plate</th>
+    <th>Random number</th>
+    <th>mobile</th>
+    <th>Checked Out</th>
+  </tr>
+  <% residents.forEach(function(data){
+	  if(data.name == m){
+	   %>
+  <tr>
+	<td><%= data.host %></td>
+    <td><%= data.name %></td>
+    <td><%= data.date %></td>
+    <td><%= data.destination %></td>
+    <td><%= data.car_make %></td>
+    <td><%= data.car_model %></td>
+    <td><%= data.plate_number %></td>
+    <td><%= data.random_number %></td>
+    <td><%= data.mobile %></td>
+    <td><%= data.checked_out %></td>
+  </tr>
+  <%}})%>
+</table>
+
+<form action="/residents/<%= m%>/edit">
+	<button type="submit">Edit</button>
+</form>
+<form action="/residents/<%= m%>/?_method=DELETE" method="POST">
+	<button type="submit"> Delete</button>
+
+</form>
+</body>
+</html>

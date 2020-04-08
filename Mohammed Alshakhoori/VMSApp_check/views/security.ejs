@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    COE 445
+  </title>
+  <link rel="stylesheet" type="text/css" href="visitor.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <style>
+* {
+  box-sizing: border-box;
+}
+.img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 35%;
+}
+
+
+.columnheader {
+  float: left;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+.column {
+  float: left;
+  
+ 
+}
+.left {
+  padding: 40px;
+  line-height: 20pt;
+  width: 15%;
+  background-color: slategrey;
+  color: white;
+   text-align: left;
+}
+
+.rightheader {
+  width: 85%; 
+  background-color: slategrey;
+}
+.right {
+  width: 85%;
+  padding: 55px;
+  border: 2.5px solid silver;
+  border-collapse: collapse;
+  
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+  
+}
+table{
+    width:100%;
+}
+table, th, td {
+  border: 3px solid   silver;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;
+}
+button {
+  background-color: white;
+   border: 3px solid slategrey;
+  width: 100%;
+}
+button:hover {
+  background-color: rgb(220, 220, 220)
+;
+  color: white;
+}
+      </style>
+</head>
+<body>
+  <div class="container-fluid">
+
+    <div class="row">
+
+ <div class="columnheader left">
+
+        <img class="img" src="https://www.kfupm.edu.sa/Main_siteassets/images/logo-kfupm.png" alt="Kfupm"> 
+ </div>
+
+ <div class="columnheader rightheader">
+   <h2>Security Page</h2>
+ </div>
+
+</div>
+
+<div class="row">
+ <div class="column left">  
+        <h1>Current Visitors:</h1>  
+ </div>
+ 
+
+ <div class="column right">
+  <table>
+    <tr>
+      <th>Host</th>
+      <th>Name</th>
+      <th>Date</th>
+      <th>Destination Building</th>
+      <th>Car Make</th>
+      <th>Car Model</th>
+      <th>Car Plate</th>
+      <th>Random number</th>
+      <th>mobile</th>
+      <th>Checked Out</th>
+    </tr>
+    <% visits.forEach(function(data){
+      if(data.checked_out == "NO"){
+       %>
+    <tr>
+      <td><%= data.host %></td>
+      <td><a href="/visits/<%=data.name%>"><%= data.name %></a></td>
+      <td><%= data.date %></td>
+      <td><%= data.destination %></td>
+      <td><%= data.car_make %></td>
+      <td><%= data.car_model %></td>
+      <td><%= data.plate_number %></td>
+      <td><%= data.random_number %></td>
+      <td><%= data.mobile %></td>
+      <td><%= data.checked_out %></td>
+    </tr>
+    <%}})%>
+  </table>
+  
+
+ </div>
+
+</div>
+<div class="row">
+
+ <div class="column left">  
+ <h1>Previous Visitors:</h1>  
+ </div>
+
+ <div class="column right">
+  <table>
+    <tr>
+      <th>Host</th>
+      <th>Name</th>
+      <th>Date</th>
+      <th>Destination Building</th>
+      <th>Car Make</th>
+      <th>Car Model</th>
+      <th>Car Plate</th>
+      <th>Random number</th>
+      <th>mobile</th>
+      <th>Checked Out</th>
+    </tr>
+    <% visits.forEach(function(data){
+      if(data.checked_out == "YES"){
+       %>
+    <tr>
+      <td><%= data.host %></td>
+      <td><a href="/visits/<%=data.name%>"><%= data.name %></a></td>
+      <td><%= data.date %></td>
+      <td><%= data.destination %></td>
+      <td><%= data.car_make %></td>
+      <td><%= data.car_model %></td>
+      <td><%= data.plate_number %></td>
+      <td><%= data.random_number %></td>
+      <td><%= data.mobile %></td>
+      <td><%= data.checked_out %></td>
+    </tr>
+    <%}})%>
+  </table>
+  
+ </div>
+
+</div>
+</div>
+
+
+<div class="row">
+  <div class="column left">  
+  <h1>Current Resident:</h1>  
+  </div>
+  
+ 
+  <div class="column right">
+   <table>
+     <tr>
+       <th>Host</th>
+       <th>Name</th>
+       <th>Date</th>
+       <th>Destination Building</th>
+       <th>Car Make</th>
+       <th>Car Model</th>
+       <th>Car Plate</th>
+       <th>Random number</th>
+       <th>mobile</th>
+       <th>Checked Out</th>
+     </tr>
+     <% residents.forEach(function(data){
+       if(data.checked_out == "NO"){
+        %>
+     <tr>
+       <td><%= data.host %></td>
+       <td><a href="/residents/<%=data.name%>"><%= data.name %></a></td>
+       <td><%= data.date %></td>
+       <td><%= data.destination %></td>
+       <td><%= data.car_make %></td>
+       <td><%= data.car_model %></td>
+       <td><%= data.plate_number %></td>
+       <td><%= data.random_number %></td>
+       <td><%= data.mobile %></td>
+       <td><%= data.checked_out %></td>
+     </tr>
+     <%}})%>
+   </table>
+   
+ 
+  </div>
+ 
+ </div>
+ 
+ 
+ <div class="row">
+ 
+  <div class="column left">  
+  <h1>Previous Resident:</h1>  
+  </div>
+ 
+  <div class="column right">
+   <table>
+     <tr>
+       <th>Host</th>
+       <th>Name</th>
+       <th>Date</th>
+       <th>Destination Building</th>
+       <th>Car Make</th>
+       <th>Car Model</th>
+       <th>Car Plate</th>
+       <th>Random number</th>
+       <th>mobile</th>
+       <th>Checked Out</th>
+     </tr>
+     <% residents.forEach(function(data){
+       if(data.checked_out == "YES"){
+        %>
+     <tr>
+       <td><%= data.host %></td>
+       <td><a href="/residents/<%=data.name%>"><%= data.name %></a></td>
+       <td><%= data.date %></td>
+       <td><%= data.destination %></td>
+       <td><%= data.car_make %></td>
+       <td><%= data.car_model %></td>
+       <td><%= data.plate_number %></td>
+       <td><%= data.random_number %></td>
+       <td><%= data.mobile %></td>
+       <td><%= data.checked_out %></td>
+     </tr>
+     <%}})%>
+   </table>
+   
+  </div>
+ 
+ </div>
+ </div>
+ <form action="/visits/new">
+  <button type="submit">Add a New Visitor</button>
+</form>
+<form action="/residents/new">
+  <button type="submit">Add a New Resident</button>
+</form>
+<form action="/checks">
+  <button type="submit">Check-In/Check-Out</button>
+</form>
+<form action="/logout">
+  <button type="submit">log out</button>
+</form>
+</body>
+</html>

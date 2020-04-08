@@ -1,0 +1,47 @@
+<%- include("./partial/header.ejs") %>
+
+
+<body>
+	<container>
+<form action="/residents" method="POST">
+	<div class="form-group">
+    <label for="id">Host</label>
+    <input type="input" class="form-control" id="id" name="Host" >
+  </div>
+  <div class="form-group">
+    <label for="name">Name </label>
+    <input type="input" class="form-control" id="name" name="Name" >
+  </div>
+  <div class="form-group">
+    <label for="major">Date</label>
+    <input type="text" class="form-control" id="major" name="Date" >
+  </div>
+  <div class="form-group">
+    <label for="name">Destination Building </label>
+    <input type="input" class="form-control" id="name" name="DestinationBuilding">
+  </div>
+  <div class="form-group">
+    <label for="major">Car Make</label>
+    <input type="text" class="form-control" id="major" name="CarMake">
+  </div>
+  <div class="form-group">
+    <label for="id">Car Model</label>
+    <input type="input" class="form-control" id="id" name="CarModel">
+  </div>
+  <div class="form-group">
+    <label for="name">Car Plate</label>
+    <input type="input" class="form-control" id="name" name="CarPlate">
+  </div>
+  <div class="form-group">
+    <label for="major">Mobile</label>
+    <input type="text" class="form-control" id="Mobile" name="Mobile" placeholder="Must Start With : (966) , Example : 966511111111">
+  </div>
+  <div class="form-group">
+    <label for="major">Checked Out</label>
+    <input type="text" class="form-control" id="major" name="CheckedOut" placeholder="Must Be: YES or NO">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</container>
+</body>
+</html>
