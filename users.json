@@ -1,0 +1,4 @@
+{"_id":{"$oid":"5e824aee8568c10db8365f71"},"Username":"hussain","Email":"hussain@hotmail.com","Password":"dsf","Role":"Security","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5e824dd060d08c36a8e49824"},"Username":"ali","Email":"ali@hotmail.com","Password":"123","Role":"Visitor","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5e824e005b8fe5428c6a0989"},"Username":"saeed","Email":"saeed@d.com","Password":"saeed","Role":"Resident","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5e824f894fff021e1c77acc3"},"Username":"Eid","Email":"Eid@hotmail.com","Password":"123","Role":"Security","__v":{"$numberInt":"0"}}
