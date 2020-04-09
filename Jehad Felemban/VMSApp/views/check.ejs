@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<%- include("./partial/header.ejs") %>
+<html>
+
+<head>
+  <title>
+    Check Page
+
+  </title>
+</head>
+
+<body>
+  <div class="mx-auto p-b-20 p-t-60 p-s-30">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 text-center ">
+          <form action="/check?_method=PUT" method="POST">
+            <div class="mx-auto p-b-30 p-t-30">
+              <h3>Visit Verification Number</h3>
+              <br>
+              <input type="text" class="form-control" id="checkNmp" name="checkNmp" placeholder="******" required="required">
+            </div>
+            <hr>
+            <div class="mx-auto p-b-30 p-t-30">
+              <button type="submit mx-auto" class="btn btn-success  btn-lg text-center">Change Check Status</button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

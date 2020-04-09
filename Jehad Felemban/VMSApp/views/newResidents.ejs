@@ -1,0 +1,126 @@
+<%- include("./partial/header.ejs") %>
+<head>
+  <title>
+    Residents
+  </title> 
+ </head>
+<body>
+  <container>
+    <form action="/residents" method="POST">
+      <div class="mx-auto p-b-20 p-t-20">
+        <div class="row">
+
+          <div class="col-3 ">
+            <h1>
+              Create New Request
+            </h1>
+          </div>
+          <div class="vl"></div>
+
+          <div class="col">
+            <!--car model, make, and
+year, destination building, time and duration of visit.-->
+            <div id="visReqDiv">
+
+
+              <div class="row">
+                <div class="col-3">
+                  <div class="row" id="valueRow">
+                    <div class="col-4">
+                      visitor Name:
+                    </div>
+                    <div class="col">
+                      <input type="text" class="form-control"  id="host" name = "host"  placeholder="#########">
+                    </div>
+                  </div>
+                  <hr>
+                </div>
+                <div class="col-3">
+                  <div class="row" id="valueRow">
+                    <div class="col-4">
+                      destination building:
+                    </div>
+                    <div class="col">
+                      <input type="text" class="form-control" id="dest" name="dest" placeholder="#########">
+                    </div>
+                  </div>
+                  <hr>
+                </div>
+                <div class="col-3">
+                  <div class="row" id="valueRow">
+                    <div class="col-4">
+                      time of visit:
+                    </div>
+                    <div class="col">
+                      <input type="text" class="form-control" id="time" name="time" placeholder="#########">
+                    </div>
+                  </div>
+                  <hr>
+                </div>
+              </div>
+
+
+
+              <div class="row">
+                <div class="col-3">
+                  <div class="row">
+                    <div class="col-3">
+                      Car Maker:
+                    </div>
+                    <div class="col">
+                      <input type="text" class="form-control" id="maker" name="maker" placeholder="#########">
+                    </div>
+                  </div>
+                  <hr>
+                </div>
+                <div class="col-3">
+                  <div class="row">
+                    <div class="col-3">
+                      Car Model:
+                    </div>
+                    <div class="col">
+                      <input type="text" class="form-control" id="model" name="model" placeholder="#########">
+                    </div>
+                  </div>
+                  <hr>
+                </div>
+                <div class="col-3">
+                  <div class="row">
+                    <div class="col-4">
+                      Date of visit:
+
+                    </div>
+                    <div class="col">
+                      <input type="text" class="form-control" id="date" name= "date"placeholder="dd/mm/yyyy">
+                    </div>
+
+                  </div>
+                  <hr>
+                </div>
+              </div>
+
+
+
+              <div class="row">
+              </div>
+              <div class="row">
+                <div class="col">
+                  <input type="submit" class="btn btn-success" value="Submit">
+                  <div id="snackbar">Visiting request added!</div>
+                </div>
+                <div class="col-3">
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </form>
+  </container>
+  <hr>
+</body>
+
+</html>

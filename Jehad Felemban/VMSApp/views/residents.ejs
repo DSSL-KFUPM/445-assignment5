@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<%- include("./partial/header.ejs") %>
+<html>
+
+<head>
+  <title>
+    Residents
+
+  </title>
+</head>
+
+<body>
+  <div class="mx-auto p-b-20 p-t-20">
+    <div class="row">
+      <div class="col-3">
+        <h1>
+          Previous Visits
+        </h1>
+      </div>
+      <div class="vl"></div>
+      <div class="col">
+
+        <div class="row">
+          <div class="col-9">
+            <div class="table-responsive table-responsive-data2">
+              <table class="table table-hover table-bordered" id="VisPreviousVisits">
+                <thead class="theadHeader">
+                  <tr>
+                    <th>visitor</th>
+                    <th>Car</th>
+                    <th>Destination</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                  </tr>
+                </thead>
+                <ul id='attendance'>
+                  <% visits.forEach(function(visit){ %>
+
+                  <thead>
+                    <tr>
+
+                      <td><a href="/residents/<%=visit.id%>"><%= visit.name %> </a></td>
+
+                      <td><%= visit["car make"] %> <%= visit["car model"]%> </td>
+                      <td><%= visit.destination %></td>
+                      <td><%= visit.date %></td>
+                      <td><%= visit.time %></td>
+                    </tr>
+                  </thead>
+
+                  <%})%>
+                </ul>
+
+
+                <tbody>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+          <div class="col-3">
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="mx-auto p-b-20 p-t-20">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center ">
+          <form action="/residents/new">
+            <button type="submit mx-auto" class="btn btn-success  btn-lg text-center">Add new visit</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <%- include("./partial/footer.ejs") %>
+
+</body>
+
+</html>
