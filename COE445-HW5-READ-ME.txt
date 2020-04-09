@@ -1,0 +1,11 @@
+NOTE:
+1- You have to have internet connection first for the pages to work properly.
+2- You need to install MognoDB and import the collections "Users" & "visits" into DB called COE445.
+3- Collection & DB names are case-sensitive.
+4- You will find the collections in attched in the folder ( DBs ).
+5- Connect the Databases on the address "localhost:27017".
+6- Open the CMD and go the directory containing this VMSApp and run the command "node ./server.js"
+7- The server will start on port 3000. So, you need to open the web browser (Google Chrome is preferred) on the address "http://localhost:3000" or "http://127.0.0.1:3000".
+8- The code doesnt use passport.
+
+Thank you,, Hussain Alrajjal 201550190
