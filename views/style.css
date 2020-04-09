@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Raleway|Ubuntu&display=swap');
+a:hover {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+a {
+    color: black;
+}
+
+button {
+    border-radius: 10px;
+    font-size: 20pt;
+    margin-right: 0.5cm;
+    margin-top: 0.5cm;
+}
+
+.Jumb {
+    text-align: center;
+    background-color: #e8e8e8;
+    height: 15cm;
+}
+
+.body {
+    background: #1c92d2;
+    background: -webkit-linear-gradient(to right, #f2fcfe, #1c92d2);
+    background: linear-gradient(to right, #f2fcfe, #1c92d2);
+}
+
+.img1 {
+    height: 180px;
+    width: 200px;
+    margin-bottom: 2cm;
+}
+
+h2 {
+    margin-bottom: 2cm;
+    font-family: 'Raleway', sans-serif;
+}
+
+h4 {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+h1 {
+    font-family: 'Raleway', sans-serif;
+}
+
+.personal {
+    text-align: center;
+    color: cornflowerblue
+}
+
+.entry {
+    display: inline-block;
+}
+
+h5 {
+    display: inline-block;
+}
+
+td {
+    vertical-align: bottom;
+    border: 1px;
+    border-style: dotted;
+    padding-right: 1cm;
+    padding-left: 0.5cm;
+}
+
+th {
+    vertical-align: bottom;
+    border: 1px;
+    border-style: dotted;
+    padding-right: 1cm;
+    padding-left: 0.5cm;
+}
+
+table {
+    border: 1px;
+    border-style: solid;
+    font-family: 'Open Sans Condensed', sans-serif;
+    display: inline-block;
+    margin-left: 5cm;
+}
+
+.font1 {
+    font-family: 'Raleway', sans-serif;
+}
+
+.spaceT {
+    margin-top: 0.5cm;
+}
+
+.spaceL1 {
+    margin-left: 2.1cm;
+}
+
+.spaceL2 {
+    margin-left: 2.4cm;
+}
+
+.spaceR1 {
+    margin-left: 1.0cm;
+}
+
+#dest {
+    margin-left: 0.8cm;
+}
+
+#time {
+    margin-left: 2.3cm;
+}
+
+.margin-left-c {
+    margin-left: 1.5cm;
+}
+
+#model {
+    margin-left: 1.9cm;
+}
+
+#LI {
+    margin-left: 0.2cm
+}
+
+.margin-left-2 {
+    margin-left: 2.0cm;
+}
+
+.margin-left-3 {
+    margin-right: 3.0cm;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KFUPM visits</title>
+
+
+</head>
+
+<body class="body">
+
+    <div class="container-fluid">
+        <h1 id="Login">Register</h1>
+        <div class="container margin-left-c">
+            <br>
+            <form action="/register" method="POST">
+                <h5 class="Username">Username:</h5>
+                <input type="text" class="Username" name="Username">
+                <br>
+                <h5 class="Password">
+                    Password:
+                </h5>
+                <input class="Email" type="password" name="Password">
+                <br>
+                <h5 class="Email">
+                    Email:
+                </h5>
+                <input type="email" name="Email">
+                <br>
+                <h5 class="Role">
+                    Role:
+                </h5>
+                <select class="Role" name="Role">
+                    <option value="Visitor">Visitor</option>
+                    <option value="Resident">Resident</option>
+                    <option value="Security">Security Office</option>
+
+                </select>
+                <br>
+
+                <button id="visitSubmit" type="submit" class="btn btn-secondary">Submit</button>
+                <br>
+                <br>
+                <a id="Dont" href="/login">Have account?Press here to login</a>
+
+
+
+
+
+
+            </form>
+
+
+
+
+        </div>
+
+</body>
+
+</html>
