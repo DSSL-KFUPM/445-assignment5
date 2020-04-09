@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <h5>visit information:</h5>
+    <p> ID:
+        <%= id %>
+    </p>
+    <p> Name:
+        <%= name %>
+    </p>
+    <p> Host:
+        <%= host %>
+    </p>
+    <p> host Email:
+        <%= hostEmail %>
+    </p>
+
+    <p> Date:
+        <%= date %>
+    </p>
+    <p> Time:
+        <%= time %>
+    </p>
+    <p> Destination:
+        <%= destination %>
+    </p>
+    <p> Car Make:
+        <%= car_make %>
+    </p>
+    <p> Car Model:
+        <%= car_model %>
+    </p>
+    <p> plate Number:
+        <%= plate_number %>
+    </p>
+    <p> pin:
+        <%= pin %>
+    </p>
+
+
+
+
+    <form action="/visits/<%= id%>/edit">
+        <button type="submit"> Edit</button>
+    </form>
+    <form action="/visits/<%= id%>/?_method=DELETE" method="POST">
+        <button type="submit"> Delete</button>
+    </form>
+
+</body>
+
+</html>
