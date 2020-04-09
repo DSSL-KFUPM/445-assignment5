@@ -1,0 +1,4 @@
+mongoimport --db=visits --collection=visits --file="C:\Users\User\Desktop\classes\COE445\Web Dev\VMSApp\formatted-visits.json"
+
+
+mongoimport --db=visits --collection=Index --file="C:\Users\User\Desktop\classes\COE445\Web Dev\VMSApp\IndexCollection.json"
