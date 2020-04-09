@@ -1,12 +1,11 @@
 {
-  "name": "studentsapp",
-  "version": "1.0.0",
-  "description": "",
+  "name": "vmsapp",
+  "version": "1.5.2",
   "main": "index.js",
   "scripts": {
     "start": "nodemon server.js"
   },
-  "author": "",
+  "author": "Jehad Ahmed Felemban",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -24,5 +23,15 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.2"
-  }
+  },
+  "keywords": [],
+  "description": "visiting managment system ",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Felembanja/VMS.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Felembanja/VMS/issues"
+  },
+  "homepage": "https://github.com/Felembanja/VMS#readme"
 }
