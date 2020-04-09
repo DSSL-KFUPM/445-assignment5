@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<title>Visitors</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!-- Bootstrab -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		
+		<!-- External CSS -->
+		<link rel="stylesheet" href="style.css">
+	</head>
+
+	<body>
+		<div class="container-fluid">
+			<div class=“row”>
+				<div class="col-xs-4">
+					<img src=https://upload.wikimedia.org/wikipedia/en/9/98/King_Fahd_University_of_Petroleum_%26_Minerals_Logo.svg alt="KFUPM LOGO" class="vrsImgLogo">
+				</div>
+				<div class="col-xs-4 text-center">
+					<h1 class="vrsHeaderMain">Visitors</h1>
+					<p>  This is just a static page from the previous assignment </p>
+				</div>
+				<div class="col-xs-4">
+					<br>
+				</div>
+			</div>
+		</div>
+		
+		<hr>
+		
+		<div class="container-fluid">
+			<div class=“row”>
+				<div class="col-xs-4">
+					<h1 class="vrsHeaderLeft"> Visitor Information </h1>
+				</div>
+				<div class="col-xs-4">
+					<img src=https://i.pinimg.com/474x/1f/ae/50/1fae509c2625b85c3011bba0b462b9c8--my-friend-friends.jpg alt="Troll Face" class="vrImgFace">
+				</div>
+				<div class="col-xs-4 d-flex align-items-center">
+					<table>
+						<tr id="nameRow">
+							<th> Name </th>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+        
+		<hr>
+		
+		<div class="container-fluid">
+			<div class=“row”>
+				<div class="col-xs-4">
+					<h1 class="vrsHeaderLeft"> New Visiting Request </h1>
+				</div>
+				<div class="col-xs-8">
+					<div class=“row”>
+						<div class="col-xs-6">
+							<div class="form-group">
+								<label for="Host">Host:</label>
+								<input type="text" class="form-control" id="hostInput">
+							</div>
+						</div>
+						<div class="col-xs-6">
+							<div class="form-group">
+								<label for="Date">Date:</label>
+								<input type="text" class="form-control" id="dateInput">
+							</div>
+						</div>
+					</div>
+					<div class=“row”>
+						<div class="col-xs-6">
+							<div class="form-group">
+								<label for="Time">Time:</label>
+								<input type="text" class="form-control" id="timeInput">
+							</div>
+						</div>
+						<div class="col-xs-6">
+							<div class="form-group">
+								<label for="Destination">Destination:</label>
+								<input type="text" class="form-control" id="destinationInput">
+							</div>
+						</div>
+					</div>
+					<div class=“row”>
+						<div class="col-xs-6">
+							<div class="form-group">
+								<label for="make">Car Make:</label>
+								<input type="text" class="form-control" id="makeInput">
+							</div>
+						</div>
+						<div class="col-xs-6">
+							<div class="form-group">
+								<label for="model">Car Model:</label>
+								<input type="text" class="form-control" id="modelInput">
+							</div>
+						</div>
+					</div>
+                    <div class=“row”>
+						<div class="col-xs-6">
+							<div class="form-group">
+								<label for="plate">Plate Number:</label>
+								<input type="text" class="form-control" id="plateInput">
+							</div>
+						</div>
+						<div class="col-xs-6 text-center">
+							<div class="form-group" >
+                                <a class="btn btn-default btn-lg" id="clearButton" onClick="clearForm();" role="button">Clear</a>
+				                <a class="btn btn-default btn-lg" id="submitButton" onClick="addVisit();" role="button">Submit</a>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		
+		<hr>
+		
+		<div class="container-fluid">
+			<div class=“row”>
+				<div class="col-xs-4">
+					<h1 class="vrsHeaderLeft"> Visits History </h1>
+				</div>
+				<div class="col-xs-8">
+					<table id="visitsHistoryTable">
+                        <tr>
+                            <th> Host </th>
+                            <th> Date </th>
+                            <th> Time </th>
+                            <th> Destination </th>
+                            <th> Car Make </th>
+                            <th> Car Model </th>
+                            <th> Plate number </th>
+                        </tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		
+		<hr>
+        
+        <script>
+
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var jso = JSON.parse(this.responseText)
+                    for(i = 0; i < jso.length; i++){ 
+                        if(jso[i]["name"] == "Saeed Saad") {
+                            var row = document.getElementById("nameRow")
+                            row.insertCell(1).innerHTML = JSON.stringify(jso[i]["name"]).replace(/['"]+/g, "");
+                            break;
+                        }
+                    }
+
+                for(i = 0; i < jso.length; i++){ 
+                    var x = 0;
+                    var row = document.getElementById("visitsHistoryTable").insertRow()
+                    for (key in jso[i]) {
+                        if(jso[i]["name"] == "Saeed Saad") {
+                            if(key != "checked out" && key != "name") {
+                                if (jso[i].hasOwnProperty(key)) {
+                                    row.insertCell(x).innerHTML = JSON.stringify(jso[i][key]).replace(/['"]+/g, "");
+                                    x++;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                }
+            };
+
+            xhttp.open("GET", "http://localhost:3000/visits.json", true);
+            xhttp.send();
+            
+            function addVisit() {
+                //Insert
+                var row = document.getElementById("visitsHistoryTable").insertRow();
+                row.insertCell(0).innerHTML = document.getElementById("hostInput").value;
+                row.insertCell(1).innerHTML = document.getElementById("dateInput").value;
+                row.insertCell(2).innerHTML = document.getElementById("timeInput").value;
+                row.insertCell(3).innerHTML = document.getElementById("destinationInput").value;
+                row.insertCell(4).innerHTML = document.getElementById("makeInput").value;
+                row.insertCell(5).innerHTML = document.getElementById("modelInput").value;
+                row.insertCell(6).innerHTML = document.getElementById("plateInput").value;
+                
+                //Claer
+                document.getElementById("hostInput").value = "";
+                document.getElementById("dateInput").value = "";
+                document.getElementById("timeInput").value = "";
+                document.getElementById("destinationInput").value = "";
+                document.getElementById("makeInput").value = "";
+                document.getElementById("modelInput").value = "";
+                document.getElementById("plateInput").value = ""; 
+            };
+            
+            function clearForm() {
+                document.getElementById("hostInput").value = "";
+                document.getElementById("dateInput").value = "";
+                document.getElementById("timeInput").value = "";
+                document.getElementById("destinationInput").value = "";
+                document.getElementById("makeInput").value = "";
+                document.getElementById("modelInput").value = "";
+                document.getElementById("plateInput").value = "";  
+            }
+                                                                     
+        </script>
+	</body>
+
+</html>

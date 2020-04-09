@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<title>New Visiting Request</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!-- Bootstrab -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		
+		<!-- External CSS -->
+		<link rel="stylesheet" type="text/css" href="/style.css">
+	</head>
+
+	<body>
+		<div class="container-fluid">
+			<div class=“row”>
+				<div class="col-xs-4">
+					<img src=https://upload.wikimedia.org/wikipedia/en/9/98/King_Fahd_University_of_Petroleum_%26_Minerals_Logo.svg alt="KFUPM LOGO" class="vrsImgLogo">
+				</div>
+				<div class="col-xs-4 text-center">
+					<h1 class="vrsHeaderMain">Visitors</h1>
+				</div>
+				<div class="col-xs-4">
+					<br>
+				</div>
+			</div>
+		</div>
+		
+		<hr>
+		
+		<div class="container-fluid">
+			<div class=“row”>
+				<div class="col-xs-4">
+					<h1 class="vrsHeaderLeft"> New Visiting Request </h1>
+				</div>
+				<form action="/visits" method="POST">
+					<div class="col-xs-8">
+						<div class=“row”>
+							<div class="col-xs-6">
+								<div class="form-group">
+									<label for="visitorInput">Visitor:</label>
+									<input type="input" class="form-control" id="visitorInput" name="visitorInput">
+								</div>
+							</div>
+							<div class="col-xs-6">
+								<div class="form-group">
+									<label for="hostInput">Host:</label>
+									<input type="input" class="form-control" id="hostInput" name="hostInput">
+								</div>
+							</div>
+						</div>
+						<div class=“row”>
+							<div class="col-xs-6">
+								<div class="form-group">
+									<label for="dateInput">Date:</label>
+									<input type="input" class="form-control" id="dateInput" name="dateInput">
+								</div>
+							</div>
+							<div class="col-xs-6">
+								<div class="form-group">
+									<label for="timeInput">Time:</label>
+									<input type="input" class="form-control" id="timeInput" name="timeInput">
+								</div>
+							</div>
+						</div>
+						<div class=“row”>
+							<div class="col-xs-6">
+								<div class="form-group">
+									<label for="destinationInput">Destination:</label>
+									<input type="input" class="form-control" id="destinationInput", name="destinationInput">
+								</div>
+							</div>
+							<div class="col-xs-6">
+								<div class="form-group">
+									<label for="makeInput">Car Make:</label>
+									<input type="input" class="form-control" id="makeInput" name ="makeInput">
+								</div>
+							</div>
+						</div>
+						<div class=“row”>
+							<div class="col-xs-6">
+								<div class="form-group">
+									<label for="modelInput">Car Model:</label>
+									<input type="input" class="form-control" id="modelInput" name="modelInput">
+								</div>
+							</div>
+							<div class="col-xs-6">
+								<div class="form-group">
+									<label for="plateInput">Plate Number:</label>
+									<input type="input" class="form-control" id="plateInput" name ="plateInput">
+								</div>
+							</div>
+						</div>
+						<div class=“row”>
+							<div class="col-xs-12 text-center">
+								<div class="form-group" >
+									<a class="btn btn-default" id="clearButton" onClick="clearForm();" role="button">Clear</a>
+									<button type="submit" class="btn btn-primary">Submit</button>
+								</div>
+							</div>
+						</div>		
+					</div>
+				</form>
+			</div>
+		</div>
+		
+		<hr>
+        
+        <script>
+            
+            function clearForm() {
+				document.getElementById("visitorInput").value = "";
+                document.getElementById("hostInput").value = "";
+                document.getElementById("dateInput").value = "";
+                document.getElementById("timeInput").value = "";
+                document.getElementById("destinationInput").value = "";
+                document.getElementById("makeInput").value = "";
+                document.getElementById("modelInput").value = "";
+                document.getElementById("plateInput").value = "";  
+            }
+                                                                     
+        </script>
+	</body>
+
+</html>
