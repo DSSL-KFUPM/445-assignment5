@@ -1,0 +1,143 @@
+<%- include("./partial/header.ejs") %>
+<html>
+	<head>
+		<title>
+		Visits
+	  
+		</title>
+	  </head>
+<body>
+
+  <div class="mx-auto p-b-20 p-t-20">
+    <div class="row">
+
+      <div class="col-3 ">
+        <h1>
+          Edit visit
+        </h1>
+      </div>
+      <div class="vl"></div>
+      <container>
+        <form action="/visits/<%=visit.id%>?_method=PUT" method="POST">
+          <div class="col">
+            <!--car model, make, and
+year, destination building, time and duration of visit.-->
+
+            <div id="visReqDiv">
+
+
+              <div class="row">
+                <div class="col-3">
+                  <div class="row" id="valueRow">
+                    <div class="form-group">
+                      <div class="col">
+                        Host Name:
+                      </div>
+                      <div class="col-lg">
+                        <input type="text" class="form-control" id="host" name = "host" value=<%= visit.host %>>
+
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                </div>
+                <div class="col-3">
+                  <div class="row" id="valueRow">
+                    <div class="form-group">
+                      <div class="col">
+                        destination building:
+                      </div>
+                      <div class="col-lg">
+                        <input type="text" class="form-control" id="dest" name = "dest" value=<%= visit.destination %>>
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                </div>
+                <div class="col-3">
+                  <div class="row" id="valueRow">
+                    <div class="form-group">
+                      <div class="col">
+                        time of visit:
+                      </div>
+                      <div class="col-lg">
+                        <input type="text" class="form-control" id="time" name="time" value="nothing">
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                </div>
+              </div>
+
+
+
+              <div class="row">
+                <div class="col-3">
+                  <div class="row">
+                    <div class="form-group">
+                      <div class="col-sm">
+                        Car Maker:
+                      </div>
+                      <div class="col-lg">
+                        <input type="text" class="form-control" id="maker" name="maker" value=<%= visit["car_make"] %>>
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                </div>
+                <div class="col-3">
+                  <div class="row">
+                    <div class="form-group">
+                      <div class="col-sm">
+                        Car Model:
+                      </div>
+                      <div class="col-lg">
+                        <input type="text" class="form-control" id="model" name="model" value=<%= visit["car_model"] %>>
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                </div>
+                <div class="col-3">
+                  <div class="row">
+                    <div class="form-group">
+                      <div class="col">
+                        Date of visit:
+
+                      </div>
+                      <div class="col-lg">
+                        <input type="text" class="form-control" id="date" name= "date"value=<%= visit.date %>>
+                      </div>
+                    </div>
+
+                  </div>
+                  <hr>
+                </div>
+              </div>
+
+
+
+              <div class="row">
+              </div>
+              <div class="row">
+                <div class="col">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <div id="snackbar">Visiting request Updated!</div>
+                </div>
+                <div class="col-sm">
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </form>
+
+      </container>
+    </div>
+
+  </div>
+  <hr>
+</body>
+
+</html>

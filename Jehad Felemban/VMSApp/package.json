@@ -1,0 +1,37 @@
+{
+  "name": "vmsapp",
+  "version": "1.5.2",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "author": "Jehad Ahmed Felemban",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.5",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "express-flash-messages": "^0.1.1",
+    "express-session": "^1.17.0",
+    "mangodb": "^1.0.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.9.6",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  },
+  "keywords": [],
+  "description": "visiting managment system ",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Felembanja/VMS.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Felembanja/VMS/issues"
+  },
+  "homepage": "https://github.com/Felembanja/VMS#readme"
+}

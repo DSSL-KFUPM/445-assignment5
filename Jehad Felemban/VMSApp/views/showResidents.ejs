@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<%- include("./partial/header.ejs") %>
+<html>
+	<head>
+		<title>
+		  Residents
+		</title> 
+	   </head>
+<body>
+	<div class="mx-auto p-b-20 p-t-20">
+		<div class="row">
+
+			<div class="col-3 ">
+				<h1>
+					Visit Information
+				</h1>
+			</div>
+			<div class="vl"></div>
+
+			<div class="col">
+				<!--car model, make, and
+	year, destination building, time and duration of visit.-->
+				<div id="visReqDiv">
+
+
+					<div class="row">
+						<div class="col-3">
+							<div class="row" id="valueRow">
+								<div class="col">
+									Visitor Name:
+								</div>
+								<div class="col">
+									<%= visit.host %>
+								</div>
+							</div>
+							<hr>
+						</div>
+						<div class="col-3">
+							<div class="row" id="valueRow">
+								<div class="col">
+									Destination:
+								</div>
+								<div class="col-lg">
+									<%= visit.destination %>
+								</div>
+							</div>
+							<hr>
+						</div>
+						<div class="col-3">
+							<div class="row" id="valueRow">
+								<div class="col">
+									time of visit:
+								</div>
+								<div class="col-lg">
+									<%= visit.time %>
+								</div>
+							</div>
+							<hr>
+						</div>
+					</div>
+
+
+
+					<div class="row">
+						<div class="col-3">
+							<div class="row">
+								<div class="col">
+									Car Maker:
+								</div>
+								<div class="col">
+									<%= visit["car make"] %>
+								</div>
+							</div>
+							<hr>
+						</div>
+						<div class="col-3">
+							<div class="row">
+								<div class="col">
+									Car Model:
+								</div>
+								<div class="col">
+									<%= visit["car model"] %>
+								</div>
+							</div>
+							<hr>
+						</div>
+						<div class="col-3">
+							<div class="row">
+								<div class="col">
+									Date of visit:
+
+								</div>
+								<div class="col">
+									<%= visit.date %>
+								</div>
+
+							</div>
+							<hr>
+						</div>
+					</div>
+
+
+
+					<div class="row">
+					</div>
+					<div class="row">
+						<div class="col ">
+							<div class="mx-auto p-b-20 p-t-20">
+								<div class="row">
+									<div class="col-sm-3 "></div>
+									<div class="col-sm-3 ">
+										<form action="/residents/<%= id%>/edit">
+											<button type="submit" class="btn btn-success"> Edit</button>
+										</form>
+									</div>
+									<div class="col-sm-3 ">
+										<form action="/residents/<%= id%>/?_method=DELETE" method="POST">
+											<button type="submit" class="btn btn-success"> Delete</button>
+										</form>
+									</div>
+									<div class="col"></div>
+								</div>
+								
+							</div>
+
+						</div>
+						<div class="col-3">
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+	<hr>
+
+</body>
+
+</html>
