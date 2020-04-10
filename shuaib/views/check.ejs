@@ -1,0 +1,21 @@
+<div class="secuirityInfo">
+    <table class="table table-stripped" border="1" style="width: 100%">
+        <thead style="background-color:gray; text-align: center">
+            <tr>
+                <th text-align: center;">Search Visit with Token number for Checkin or Checkout</th>
+            </tr>
+        </thead>
+        <tbody id="currentVisitors" style="background-color:rgb(180, 203, 223)">
+
+            <tr style="border: 1px solid black;" align="center">
+                <td>
+                    <form action="/search" method="POST">
+                        <input type="text" id="token" name="token" placeholder="Enter Token No" />
+                        <button type="submit">Submit</button>
+                    </form>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
