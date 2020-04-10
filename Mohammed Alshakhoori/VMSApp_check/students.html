@@ -1,0 +1,46 @@
+<!--
+  Demonstrate the usage of AJAX call, i.e., XMLHttpRequest(), in javascript
+
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <title>COE 445 Attendance Sheet </title>
+</head>
+<body>
+<p> COE 445 Roster  </p>
+<!-- <button onclick="getData()"> Fetch From Server </button> -->
+
+<lu id='roster'> </lu>
+
+<p> Attendance</p>
+<ul id='attendance'> 
+
+</ul>
+<script>
+
+
+var xhr = new XMLHttpRequest();
+xhr.onreadystatechange = function(){
+  if(this.readyState==4 & this.status==200){
+    var data = xhr.responseText;
+    var students = JSON.parse(data);
+    for(var s in students){
+      console.log(students[s]);
+      $("#roster").append("<li>" + students[s].name).append('<input type="button" value="Absent" id=' + students[s].id + ' onclick="absent(this.id)"/>');
+    }
+  }
+};
+xhr.open("GET","http://localhost:3000/students.json",true);
+xhr.send();
+
+function absent(clicked_id){
+  $("#attendance").append("<li>" +  clicked_id + "</li>");
+
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<%- include("./partial/header.ejs") %>
+<body>
+  <h1> Edit information for <%= visit.name%></h1>
+	<container>
+<form action="/visits/<%= visit.name%>?_method=PUT" method="POST">
+  <div class="form-group">
+    <label for="id">Host</label>
+    <input type="input" class="form-control" id="id" name="Host" value="<%= visit.host%>" >
+  </div>
+  <div class="form-group">
+    <label for="major">Date</label>
+    <input type="text" class="form-control" id="major" name="Date" value="<%= visit.date%>">
+  </div>
+  <div class="form-group">
+    <label for="name">Destination Building </label>
+    <input type="input" class="form-control" id="name" name="DestinationBuilding" value="<%= visit.destination%>" >
+  </div>
+  <div class="form-group">
+    <label for="major">Car Make</label>
+    <input type="text" class="form-control" id="major" name="CarMake" value="<%= visit.car_make%>"> 
+  </div>
+  <div class="form-group">
+    <label for="id">Car Model</label>
+    <input type="input" class="form-control" id="id" name="CarModel" value="<%= visit.car_model %>">
+  </div>
+  <div class="form-group">
+    <label for="name">Car Plate</label>
+    <input type="input" class="form-control" id="name" name="CarPlate" value="<%= visit.plate_number%>">
+  </div>
+  <div class="form-group">
+    <label for="major">Mobile</label>
+    <input type="text" class="form-control" id="Mobile" name="Mobile" value="<%= visit.mobile%>">
+  </div>
+  <div class="form-group">
+    <label for="major">Checked Out</label>
+    <input type="text" class="form-control" id="major" name="CheckedOut" value="<%= visit.checked_out%>">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</container>
+</body>
+</html>

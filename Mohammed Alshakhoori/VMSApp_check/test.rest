@@ -1,0 +1,23 @@
+POST http://localhost:3000/students
+Content-Type:  application/json
+
+{
+    "id": "1",
+    "name": "Muhamad Wow",
+    "major":"ISE"
+}
+#####
+GET http://localhost:3000/students/5/edit
+
+#####
+GET http://localhost:3000/students/5
+
+####
+
+PUT http://localhost:3000/students/5
+Content-Type:  application/json
+
+{
+    "name": "Muhamad Wow",
+    "major":"COE"
+}

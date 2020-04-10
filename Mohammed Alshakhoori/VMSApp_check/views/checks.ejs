@@ -1,0 +1,153 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link href="visitor.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+* {
+  box-sizing: border-box;
+}
+.img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 35%;
+}
+
+
+.columnheader {
+  float: left;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+.column {
+  float: left;
+  
+ 
+}
+.left {
+  padding: 40px;
+  line-height: 20pt;
+  width: 15%;
+  background-color: slategrey;
+  color: white;
+   text-align: left;
+}
+.left1 {
+  width: 100%; 
+  background-color: silver;
+}
+.rightheader {
+  width: 85%; 
+  background-color: slategrey;
+}
+.right {
+  width: 85%;
+  padding: 55px;
+  border: 2.5px solid silver;
+  border-collapse: collapse;
+  
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+  
+}
+table{
+    width:100%;
+}
+table, th, td {
+  border: 3px solid   silver;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;
+}
+button {
+  background-color: white;
+   border: 3px solid slategrey;
+  width: 100%;
+}
+button:hover {
+  background-color: rgb(220, 220, 220)
+;
+  color: white;
+}
+input, select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #ccc;
+}
+
+    </style>
+</head>
+   <body>
+     <script src="visitor.js"></script>
+     <div class="container-fluid">
+
+     <div class="row">
+
+  <div class="columnheader left">
+
+    <img class="img" src="https://www.kfupm.edu.sa/Main_siteassets/images/logo-kfupm.png" alt="Kfupm"> 
+  </div>
+
+  <div class="columnheader rightheader">
+    <h2>check Page</h2>
+  </div>
+
+</div>
+
+<div class="row">
+
+  <div class="column left">  
+  <h1>check form:</h1>  
+  </div>
+
+ <div class="column right">
+
+ <div class="row">
+  <div class="column left1">
+    <label for="user">Visitor Random Number:</label> 
+    <form action="/checks1" method="post">
+      <input type="text" placeholder="Random number" name="R" id="R"> 
+      <button type="submit">check-in/check-out (visitors)</button>
+    </form>
+    <label for="user">Resident Random Number:</label> 
+    <form action="/checks" method="post">
+      <input type="text" placeholder="Random number" name="R1" id="R1"> 
+      <button type="submit">Check-In/Check-Out (Residents)</button>
+    </form>
+
+</div> 
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
+
+
