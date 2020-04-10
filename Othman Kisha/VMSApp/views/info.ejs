@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Info Page </title>
+        <link rel="stylesheet" href="/visitors_residents_security_Style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    </head>
+    <body>
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="/">
+                <img src="/logo2.png" width="75" height="75" class="d-inline-block align-top">  
+            </a>
+            <p class="navbar-text"> <h1 class="display-4"> <%= type %> </h1></p>
+        </nav>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="/<%= home %>">My Info</a>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/<%= url %>/new"> Create New Request </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/<%= url %>"> Previous <%= accept %> </a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0" action="/logout">
+                <button class="btn btn-outline-success my-2 my-sm-0 text-light border-light" type="submit"> log out </button>
+            </form>
+        </nav>
+        <div class="jumbotron">
+            <table>
+                <tr>
+                    <td>
+                        <table border="4">
+                            <tr><td><img src="/<%= img %>" class="img-fluid" id="imgvis"></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <div><h5> Name: <%= user.username %> </h5></div>
+                        <div><h5> Email: <%= user.email %> </h5></div>    
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

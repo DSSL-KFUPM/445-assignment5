@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Previous <%= accept %> Page </title>
+        <link rel="stylesheet" href="/visitors_residents_security_Style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    </head>
+    <body>
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="/">
+                <img src="/logo2.png" width="75" height="75" class="d-inline-block align-top">  
+            </a>
+            <p class="navbar-text"> <h1 class="display-4"> <%= type %> </h1></p>
+        </nav>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="/<%= url %>"> Previous <%= accept %> </a>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"> 
+                    <a class="nav-link" href="/<%= home %>"> My Info </a>
+                </li>
+                <li class="nav-item"> 
+                    <a class="nav-link" href="/<%= url %>/new"> Create New Request </a>
+                </li>
+            </ul> 
+            <form class="form-inline my-2 my-lg-0" action="/logout">
+                <button class="btn btn-outline-success my-2 my-sm-0 text-light border-light" type="submit"> log out </button>
+            </form>
+        </nav>
+        <div class="jumbotron">
+            <table class="table table-striped table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <% if (type == "Visitors") { %>
+                            <th scope="col"> Host </th>
+                        <% } %>
+                        <% if (type == "Residents") { %>
+                            <th scope="col"> Name </th>
+                        <% } %>
+                        <th scope="col"> Date </th>
+                        <th scope="col"> Time </th>
+                        <th scope="col"> Destination </th>
+                        <th scope="col"> Car Make </th>
+                        <th scope="col"> Car Model </th>
+                        <th scope="col"> Plate Number </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% visits.forEach((visit) => { %>
+                        <tr>
+                            <td><h5> <%= visit.name %> </h5></td>
+                            <td><h5> <%= visit.date %> </h5></td>
+                            <td><h5> <%= visit.time %> </h5></td>
+                            <td><h5> <%= visit.destination %> </h5></td>
+                            <td><h5> <%= visit.car_make %> </h5></td>
+                            <td><h5> <%= visit.car_model %> </h5></td>
+                            <td><h5> <%= visit.plate_number %> </h5></td>
+                            <td><a class="text-dark" href="/<%= url %>/<%= visit.id %>"><h5> Show </h5></a></td>
+                        </tr>
+                    <% }) %>        
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

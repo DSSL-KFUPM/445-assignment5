@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Fast Check Page </title>
+        <link rel="stylesheet" href="/visitors_residents_security_Style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    </head>
+    <body>
+        <div id="logregfast">
+            <form class="form-signin" action="/fast_check" method="POST">
+                <a href="/"> <img class="mb-4" src="/logo2.png" class="img-fluid" alt=""> </a>
+                <h1 class="h3 mb-3 font-weight-normal"> Please enter the reservation number: </h1>
+                <input type="text" id="input" class="form-control" placeholder="<%= reservation %>" name="reservation" required autofocus>
+                <br>
+                <button class="btn btn-lg btn-secondary btn-block bg-dark" type="submit"> Check </button>
+                <h6> <%= status %> </h6>
+            </form>
+            <div class="form-signin">
+                <a href="/" class="text-dark"> Home </a>
+                <span> / </span>
+                <a href="/register" class="text-dark"> Register </a>
+                <span> / </span>
+                <a href="/login" class="text-dark"> Login </a>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,101 @@
+.display-4 {
+    color: rgb(25, 32, 25);
+    align-self: auto;
+}
+
+body {
+    background-image: url('background.jpg');
+    background-size: cover;
+    height: 100%;
+}
+
+.navbar-text {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    margin: auto;
+    padding-top: 10px;
+}
+
+.navbar {
+    opacity: 0.75;
+}
+
+#imgvis {
+    width: 150px;
+    height: 150px;
+    align-self: auto;
+}
+
+h5, th {
+    padding-left: 20px;
+}
+
+table {
+    padding-top: 50px;
+    padding-left: 50px;
+    align-self: center;
+}
+
+.jumbotron {
+    opacity: 0.75;
+}
+
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.form-signin .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.form-signin .form-control:focus {
+    z-index: 2;
+}
+
+.form-signin input[type="email"] {
+    margin-bottom: 5px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="input"] {
+    margin-bottom: 5px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+    margin-bottom: 5px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+#logregfast {
+    background-color: white;
+    margin-top: 2.5%;
+    margin-left: 25%;
+    opacity: 0.65;
+    min-width: 700px;
+    max-width: 700px;
+    min-height: 600px;
+    max-height: 600px;
+    border-radius: 10%;
+}
+
+.form-label {
+    margin-right: 15px;
+}
+
+.form-inline .form-group .form-control {
+    max-width: 450px;
+    min-width: 450px;
+}

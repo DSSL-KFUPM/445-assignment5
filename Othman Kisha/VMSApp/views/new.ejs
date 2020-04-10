@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> New Request Page </title>
+        <link rel="stylesheet" href="/visitors_residents_security_Style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    </head>
+    <body>
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="/">
+                <img src="/logo2.png" width="75" height="75" class="d-inline-block align-top">  
+            </a>
+            <p class="navbar-text"> <h1 class="display-4"> <%= type %> </h1></p>
+        </nav>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="/<%= url %>/new"> Create New Request </a>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"> 
+                    <a class="nav-link" href="/<%= home %>"> My Info </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/<%= url %>">Previous <%= accept %> </a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0" action="/logout">
+                <button class="btn btn-outline-success my-2 my-sm-0 text-light border-light" type="submit"> log out </button>
+            </form>
+        </nav>
+        <div class="jumbotron">
+            <form action="/<%= url %>" method="POST">
+                <div class="form-group">
+                    <label for="name"> Name </label>
+                    <input type="text" class="form-control" name="name" value="<%= name %>">
+                </div>
+                <div class="form-group">
+                    <label for="date"> Date </label>
+                    <input type="text" class="form-control" name="date" value="<%= date %>">
+                </div>
+                <div class="form-group">
+                    <label for="time"> Time </label>
+                    <input type="text" class="form-control" name="time" value="<%= time %>">
+                </div>
+                <div class="form-group">
+                    <label for="destination"> Destination </label>
+                    <input type="text" class="form-control" name="destination" value="<%= destination %>">
+                </div>
+                <div class="form-group">
+                    <label for="car make"> Car Make </label>
+                    <input type="text" class="form-control" name="car_make" value="<%= car_make %>">
+                </div>
+                <div class="form-group">
+                    <label for="car model"> Car Model </label>
+                    <input type="text" class="form-control" name="car_model" value="<%= car_model %>">
+                </div>
+                <div class="form-group">
+                    <label for="plate number"> Plate Number </label>
+                    <input type="text" class="form-control" name="plate_number" value="<%= plate_number %>">
+                </div>
+                <button type="submit" class="btn btn-secondary bg-dark"> Submit </button>
+            </form>
+        </div>
+    </body>
+</html>
