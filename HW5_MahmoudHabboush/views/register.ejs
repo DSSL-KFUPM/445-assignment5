@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Register</title>
+  <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/index.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="/js/register.js"></script>
+</head>
+<body>
+  <div class="bodyCard" style='height : <%=expand==true?500:470%>px'>
+    <a href="https://www.kfupm.edu.sa">
+      <img class="logo" src="/img/logo.png" alt="Error, image couldn't be loaded">
+    </a>
+    <h5 class="cardTitle">Visiting Management System</h5>
+    <h6 class="card-subtitle text-danger"><%=e_msg%></h6>
+    <div class="card-body" style="justify-content: center; display: flex;">
+      <form class="form" method="post" action="/register">
+        <div class="form-group">
+          <input type="text" class="form-control" name="name" id="name" placeholder="Enter your full name" />
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" name="email" id="email" placeholder="Enter your email" />
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control" id="password" name="password" placeholder="Enter your Password" />
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control" id="confirm" name="confirm" placeholder="Confirm your Password" />
+        </div>
+        <div class="form-group row">
+          <label class="col-2 col-form-label" for="type">Type</label>
+          <select class="form-control col-9" id="type" name="type">
+            <option>Resident</option>
+            <option>Visitor</option>
+            <option>Security</option>
+          </select>
+        </div>
+        <div>
+          <button type="submit" id="btnSubmit" class="btn btn-danger">Register</button>
+        </div>
+        <a href="/login">Have an account? Login!</a>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+body:before{
+content: '';
+position: fixed;
+width: 100vw;
+height: 100vh;
+background-image: url("../img/gate.jpg");
+background-position: center center;
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;
+-webkit-filter: blur(10px);
+-moz-filter: blur(5px);
+-o-filter: blur(5px);
+-ms-filter: blur(5px);
+filter: blur(5px);
+transform: scale(1.1);
+}
+.bodyCard {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+width: 500px;
+height: 350px;
+padding: 70px;
+box-sizing: border-box;
+background: rgba(0,0,0,.5);
+}
+.logo {
+position: absolute;
+width: 150px;
+height: auto;
+border-radius: 100%;
+top: calc(-140px/2);
+left: calc(50% - 80px);
+}
+.cardTitle {
+text-align: center;
+font-size: 30px;
+font-family: 'Passion One', cursive; 
+font-weight: 400; 
+color: white
+}
+.card-subtitle {
+	text-align: center;
+}
+.btn-danger {
+	width: 100%;
+}
+.form {
+	width : 300px;
+}
+.col-form-label {
+	color: white;
+}
