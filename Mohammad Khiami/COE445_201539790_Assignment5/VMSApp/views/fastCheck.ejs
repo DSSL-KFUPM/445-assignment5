@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<title>Visiting Management System</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!-- Bootstrab -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		
+		<!-- External CSS -->
+		<link rel="stylesheet" href="style.css">
+	</head>
+
+	<body>
+		<div class="container-fluid">
+			<div class=“row”>
+				<div class="col text-center">
+					<img src=https://upload.wikimedia.org/wikipedia/en/9/98/King_Fahd_University_of_Petroleum_%26_Minerals_Logo.svg alt="KFUPM LOGO" id="indexImgLogo">
+				</div>
+			</div>
+		</div>
+		
+		<div class="container-fluid">
+			<div class=“row”>
+				<div class="col text-center">
+					<h1 id="indexHeaderVMS">Visiting Management System</h1>
+				</div>
+			</div>
+		</div>
+		
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col text-center">
+					<form action="/fastCheck" method="POST">
+						<input type="text" name="visitNumber" placeholder="Visit Number">
+						<input type="submit" name="optionSelected" value="Retrieve Information"></input>
+						<input type="submit" name="optionSelected" value="Check in/Check out"></input>						
+					</form>
+						<a class=button href="/" role="button">Return Back</a>
+
+				</div>
+			</div>
+		</div>
+
+	</body>
+
+</html>

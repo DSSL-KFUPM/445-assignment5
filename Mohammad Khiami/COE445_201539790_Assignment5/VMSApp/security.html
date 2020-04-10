@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<title>Security</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!-- Bootstrab -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        
+        <!-- Javascript -->
+        <script src="script.js"></script>
+        </script> 
+        
+		<!-- External CSS -->
+		<link rel="stylesheet" href="style.css">
+	</head>
+
+	<body>
+		<div class="container-fluid">
+			<div class=“row”>
+				<div class="col-xs-4">
+					<img src=https://upload.wikimedia.org/wikipedia/en/9/98/King_Fahd_University_of_Petroleum_%26_Minerals_Logo.svg alt="KFUPM LOGO" class="vrsImgLogo">
+				</div>
+				<div class="col-xs-4 text-center">
+					<h1 class="vrsHeaderMain">Security</h1>
+					<p>  This is just a static page from the previous assignment </p>
+				</div>
+				<div class="col-xs-4">
+					<br>
+				</div>
+			</div>
+		</div>
+		
+		<hr>
+		
+		<div class="container-fluid">
+			<div class=“row”>
+				<div class="col-xs-4">
+					<h1 class="vrsHeaderLeft"> Current Visitors </h1>
+				</div>
+				<div class="col-xs-8">
+					<table id="currentVisitors">
+					</table>
+				</div>
+			</div>
+		</div>
+		
+		<hr>
+		
+		<div class="container-fluid">
+			<div class=“row”>
+				<div class="col-xs-4">
+					<h1 class="vrsHeaderLeft"> Visits History </h1>
+				</div>
+				<div class="col-xs-8">
+					<table id="previousVisits">
+					</table>
+				</div>
+			</div>
+		</div>
+		
+		<hr>
+        
+            <script>
+                
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        var jso = JSON.parse(this.responseText)
+                        
+                        //Fill Headers
+                        var cvRow = document.getElementById("currentVisitors").insertRow()
+                        var pvRow = document.getElementById("previousVisits").insertRow()
+                        
+                        for (key in jso[0]) {
+                                if(key != "checked out") {
+                                    var headerCell = document.createElement("TH");
+                                    headerCell.innerHTML = key;
+                                    cvRow.appendChild(headerCell);
+                                    headerCell = document.createElement("TH");
+                                    headerCell.innerHTML = key;
+                                    pvRow.appendChild(headerCell);
+                                }
+                        
+                        }
+                        //Fill Table data
+                        for(i = 0; i < jso.length; i++){ 
+                            var x = 0;
+                            if(jso[i]["checked out"] == "NO") {
+                                var row = document.getElementById("currentVisitors").insertRow()
+                            }
+                            else {
+                                var row = document.getElementById("previousVisits").insertRow()
+                            }
+                                
+                            for (key in jso[i]) {
+                                if(key != "checked out") {
+                                    if (jso[i].hasOwnProperty(key)) {
+                                        row.insertCell(x).innerHTML = JSON.stringify(jso[i][key]).replace(/['"]+/g, "");
+                                        x++;
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+                };
+
+                xhttp.open("GET", "http://localhost:3000/visits.json", true);
+                xhttp.send();
+                
+            </script>
+
+	</body>
+
+</html>

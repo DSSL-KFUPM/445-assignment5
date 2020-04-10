@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<title>Show Visit by Number</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!-- Bootstrab -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		
+		<!-- External CSS -->
+		<link rel="stylesheet" type="text/css" href="/style.css">
+	</head>
+
+	<body>
+		<div class="container-fluid">
+			<div class=“row”>
+				<div class="col-xs-4">
+					<img src=https://upload.wikimedia.org/wikipedia/en/9/98/King_Fahd_University_of_Petroleum_%26_Minerals_Logo.svg alt="KFUPM LOGO" class="vrsImgLogo">
+				</div>
+				<div class="col-xs-4 text-center">
+					<h1 class="vrsHeaderMain">Fast Check</h1>
+				</div>
+				<div class="col-xs-4">
+					<br>
+				</div>
+			</div>
+		</div>
+		
+		<hr>
+		
+		<div class="container-fluid">
+			<div class=“row”>
+				<div class="col-xs-4">
+					<h1 class="vrsHeaderLeft"> Show Visit Information </h1>
+					
+				</div>
+				<form action="/visits/<%= cvisit["name"]%>?_method=PUT" method="POST">
+					<div class="col-xs-8">
+						<div class=“row”>
+							<div class="col-xs-6">
+								<div class="form-group">
+									<label for="visitorInput">Visitor:</label>
+									<input readonly="readonly" type="input" class="form-control" id="visitorInput" name="visitorInput" value="<%= cvisit["name"]%>">
+								</div>
+							</div>
+							<div class="col-xs-6">
+								<div class="form-group">
+									<label for="hostInput">Host:</label>
+									<input readonly="readonly" type="input" class="form-control" id="hostInput" name="hostInput" value="<%= cvisit["host"]%>">
+								</div>
+							</div>
+						</div>
+						<div class=“row”>
+							<div class="col-xs-6">
+								<div class="form-group">
+									<label for="dateInput">Date:</label>
+									<input readonly="readonly" type="input" class="form-control" id="dateInput" name="dateInput" value="<%= cvisit["date"]%>">
+								</div>
+							</div>
+							<div class="col-xs-6">
+								<div class="form-group">
+									<label for="timeInput">Time:</label>
+									<input readonly="readonly" type="input" class="form-control" id="timeInput" name="timeInput" value="<%= cvisit["time"]%>">
+								</div>
+							</div>
+						</div>
+						<div class=“row”>
+							<div class="col-xs-6">
+								<div class="form-group">
+									<label for="destinationInput">Destination:</label>
+									<input readonly="readonly" type="input" class="form-control" id="destinationInput", name="destinationInput" value="<%= cvisit["destination"]%>">
+								</div>
+							</div>
+							<div class="col-xs-6">
+								<div class="form-group">
+									<label for="makeInput">Car Make:</label>
+									<input readonly="readonly" type="input" class="form-control" id="makeInput" name ="makeInput" value="<%= cvisit["car_make"]%>">
+								</div>
+							</div>
+						</div>
+						<div class=“row”>
+							<div class="col-xs-6">
+								<div class="form-group">
+									<label for="modelInput">Car Model:</label>
+									<input readonly="readonly" type="input" class="form-control" id="modelInput" name="modelInput" value="<%= cvisit["car_model"]%>">
+								</div>
+							</div>
+							<div class="col-xs-6">
+								<div class="form-group">
+									<label for="plateInput">Plate Number:</label>
+									<input readonly="readonly" type="input" class="form-control" id="plateInput" name ="plateInput" value="<%= cvisit["plate_number"]%>">
+								</div>
+							</div>
+						</div>
+						<div class=“row”>
+							<div class="col-xs-12 text-center">
+								<div class="form-group" >
+									<h2> Guest is <%= cvisit["stat"] %> KFUPM</h2>
+									<form>
+									  <input type="button" value="Back" onclick="history.back()">
+									</form>
+								</div>
+							</div>
+						</div>		
+					</div>
+				</form>
+			</div>
+		</div>
+		
+		<hr>
+	</body>
+
+</html>
