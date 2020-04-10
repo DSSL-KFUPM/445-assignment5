@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Residents</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="chrome-extension://mooikfkahbdckldjjndioackbalphokd/assets/prompt.js"></script>
+    <link rel="stylesheet" href="/css/HW1-style.css">
+    <script src="/index/myjs.js"></script>
+
+
+    <nav class="navbar navbar-trans navbar-expand-lg navbar-light bg-dark ">
+        <a class="navbar-brand" href=""><a href="/"><img src="/imgs/KFUPM-logo.png" width="50" height="50" class="d-inline-block align-center" alt="" href=""></a>&emsp;<strong id="text">Residents</strong></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link " href="/logout" id="text2">logout</a>
+                  </li>
+            </ul>
+        </div>
+    </nav>
+
+    <br>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row">
+            <div id="left" class="col-lg-2">
+                <div class="row">
+                    <div class="col text-center">
+                        <br><br><br><br>
+                        <p>My Info</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col text-center">
+                        <br><br><br><br><br>
+                        <p>Creat new Request</p>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <div id="right" class="col-lg-9">
+                <div class="row">
+                    <img id="imgs" src="https://www.screengeek.net/wp-content/uploads/2019/12/avengers-endgame-thanos-snap.jpg" ; width="200px" height="170px" ;>
+                    <div class="col text-center">
+                        <br><br><br><br>
+                        <p id="username" name ="<%= name%>" > &emsp;   Name : <%= typeof name != 'undefined' ? name : '' %></p>
+                    </div>
+                </div>
+                <hr>
+                <!--            information form of the car-->
+                <div class="row">
+                    <div class="col text-center">
+
+                        <form <% if(state){ %>
+                              action="/resident/<%= id%>?_method=PUT" method="POST"
+                                <% } else{ %> 
+                                action="/resident" method="POST" 
+                              <% } %>
+                        >
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label for=">Car Model">Car Model</label>
+                                    <input type="text" class="form-control" id="cmodel" name=cmodel value="Accent">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="Car Maker">Car Maker</label>
+                                    <input type="text" class="form-control" id="cmaker" name=cmaker value="Hyundai">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="caryear">Car Year</label>
+                                    <input type="text" class="form-control" id="car year" value="1999">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-4 mb-3">
+                                    <label for="Destination">Destination</label>
+                                    <input type="text" class="form-control" id="Destination" name=Destination value="Building 1">
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="Visit Time">Visit Time</label>
+                                    <input type="text" class="form-control" id="time" name=time value="9:00PM">
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="Visit Duration ">Visit Date </label>
+                                    <input type="text" class="form-control" id="date" name=date value="12/12/2012">
+                                </div>
+                            </div>
+                            <div class="form-row justify-content-center" id="last_row">
+
+                                <div class="col-md-4 mb-3">
+                                    <label for="Visit Duration ">Visitor name? </label>
+                                    <input type="text" class="form-control" id="Vname" name=Vname value="Thanos">
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="Visit Duration ">Plate number </label>
+                                    <input type="text" class="form-control" id="pn" name=pn value="EXT000">
+                                </div>
+                            </div>
+                            <div class="form-row justify-content-center">
+                                <% if(state){ %>
+                                    <form >
+                                        <button type="submit" class="btn btn-primary">Update</button>
+                                    </form>  
+                                    <form action="/resident/<%= id %>?_method=DELETE" method="POST">
+                                        <button type="submit" class="btn btn-primary">Delete</button>
+                                    </form>
+                                <% } else{ %> 
+                                <button type="submit" class="btn btn-primary" onclick="Request('Saeed Saad')">Rquest</button>
+                              <% } %>
+                                </div>
+                        </form>
+                    </div>
+                </div>
+
+
+
+                
+                <br>
+            </div>
+        </div>
+
+    </div>
+    <br>
+</body>
+
+
+<script>
+var state = <%= state %>;
+    var id = <%= id %>;
+    console.log(state)
+    <% if(state){ %>
+        var temp = <%- JSON.stringify(students) %>;
+        console.log(temp);
+        $("#cmodel").attr("value",temp["car_model"]);
+        $("#cmaker").attr("value",temp["car_make"]);
+        $("#Destination").attr("value",temp["destination"]);
+        $("#time").attr("value",temp["time"]);
+        $("#date").attr("value",temp["date"]);
+        $("#Vname").attr("value",temp["name"]);
+        $("#pn").attr("value",temp["plate_number"]);
+    <% }  %>  
+
+</script>
+
+</html>

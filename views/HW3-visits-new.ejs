@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Visitors</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="chrome-extension://mooikfkahbdckldjjndioackbalphokd/assets/prompt.js"></script>
+    <link rel="stylesheet" href="/css/HW1-style.css">
+    <script src="/index/myjs.js"></script>
+
+
+    <!--                <div class="col text-center">-->
+
+
+    <nav class="navbar navbar-trans navbar-expand-lg navbar-light bg-dark  ">
+        <a class="navbar-brand" href=""><a href="/"><img src="/imgs/KFUPM-logo.png" width="50" height="50" class="d-inline-block align-center" alt="" href=""></a>&emsp;<strong id="text">Visitors</strong></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link " href="/logout" id="text2">logout</a>
+                  </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <br>
+</head>
+
+<body>
+    <!--
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+      
+      <div class="row">
+        <div  class="col-md-auto">
+            <a href="HW1-Index.html"><img src="KFUPM-logo.png" align="left"></a>
+        </div>
+        <div  class="col-md-auto">
+            <div class="col text-center">
+                <p id= "button" class="display-4" ><strong>Visitors</strong></p>
+            </div>
+        </div>
+        </div>
+  </div>
+</div>
+-->
+
+    <div class="container">
+
+        <div class="row">
+            <div id="left" class="col-lg-2 rounded">
+                <div class="row">
+                    <div class="col text-center">
+                        <br><br><br><br>
+                        <p>My Info</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col text-center">
+                        <br><br><br><br><br><br>
+                        <p>Creat new Request</p>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <div id="right" class="col-lg-9 rounded">
+                <div class="row">
+                    <img id="imgs" src="https://media.vanityfair.com/photos/5ce82905f7f26f80df227ab2/4:3/w_1331,h_998,c_limit/sonic-movie-delay.jpg" ; width="200px" ;>
+                    <div class="col text-center">
+                        <br><br><br><br>
+                        <p id="username" name ="<%= name%>" > &emsp;   Name : <%= typeof name != 'undefined' ? name : '' %></p>
+                    </div>
+                </div>
+                <hr>
+                <!--            information form of the car-->
+                <div class="row">
+                    <div class="col text-center">
+
+                        <form <% if(state){ %>
+                              action="/visits/<%= id%>?_method=PUT" method="POST"
+                                <% } else{ %> 
+                                action="/visits" method="POST" 
+                              <% } %>
+                        >
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label for=">Car Model">Car Model</label>
+                                    <input type="text" class="form-control" id="cmodel" name=cmodel value="Accent">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="Car Maker">Car Maker</label>
+                                    <input type="text" class="form-control" id="cmaker" name=cmaker value="Hyundai">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="caryear">Car Year</label>
+                                    <input type="text" class="form-control" id="car year" value="1999">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-4 mb-3">
+                                    <label for="Destination">Destination</label>
+                                    <input type="text" class="form-control" id="Destination" name=Destination value="Building 1">
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="Visit Time">Visit Time</label>
+                                    <input type="text" class="form-control" id="time" name=time value="10:00AM">
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="Visit Duration ">Visit Date </label>
+                                    <input type="text" class="form-control" id="date" name=date value="12/12/2012">
+                                </div>
+                            </div>
+                            <div class="form-row justify-content-center" id="last_row">
+
+                                <div class="col-md-4 mb-3">
+                                    <label for="Visit Duration ">Visiting who? </label>
+                                    <input type="text" class="form-control" id="Vname" name=Vname value="Thanos">
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="Visit Duration ">Plate number </label>
+                                    <input type="text" class="form-control" id="pn" name=pn value="EXT000">
+                                </div>
+                            </div>
+                            <div class="col text-center">
+                                
+                            <div class="form-row justify-content-center">
+                                <% if(state){ %>
+                                    <form >
+                                        <button type="submit" class="btn btn-primary">Update</button>
+                                    </form>  
+                                    <form action="/visits/<%= id %>?_method=DELETE" method="POST">
+                                        <button type="submit" class="btn btn-primary">Delete</button>
+                                    </form>
+                                <% } else{ %> 
+                                <button type="submit" class="btn btn-primary" onclick="Request('Saeed Saad')">Rquest</button>
+                              <% } %>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+
+                <br>
+            </div>
+        </div>
+    </div>
+    <br>
+</body>
+<script>
+    var state = <%= state %>;
+    var id = <%= id %>;
+    console.log(state)
+    <% if(state){ %>
+        var temp = <%- JSON.stringify(students) %>;
+        console.log(temp);
+        $("#cmodel").attr("value",temp["car_model"]);
+        $("#cmaker").attr("value",temp["car_make"]);
+        $("#Destination").attr("value",temp["destination"]);
+        $("#time").attr("value",temp["time"]);
+        $("#date").attr("value",temp["date"]);
+        $("#Vname").attr("value",temp["host"]);
+        $("#pn").attr("value",temp["plate_number"]);
+    <% }  %>  
+
+</script>
+
+</html>

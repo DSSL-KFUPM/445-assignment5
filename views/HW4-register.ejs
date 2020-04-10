@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>VMS</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="chrome-extension://mooikfkahbdckldjjndioackbalphokd/assets/prompt.js"></script>
+    <link rel="stylesheet" href="/css/HW1-style.css">
+
+</head>
+
+<body>
+     <nav class="navbar navbar-trans navbar-expand-lg navbar-light bg-dark  ">
+        <a class="navbar-brand" href=""><a href="/"><img src="/imgs/KFUPM-logo.png" width="50" height="50" class="d-inline-block align-center" alt="" href=""></a>&emsp;<strong id="text">Visitors</strong></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link glow " href="/check-in" id="text2">Check-in</a>
+                  </li>
+            </ul>
+        </div>
+    </nav>
+    <br><br><br><br><br><br><br><br><br><br>
+
+    <div class="container">
+        <div class="jumbotron">
+          <a href= "/">  <h1 class="display-4" ; a><img id="center" src="/imgs/KFUPM-logo.png"></h1></a>
+
+            <p id="Greetings">Visiting Managment System</p>
+
+            <form action="/register" method="POST">
+                 <div class="form-group row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label" id="email">name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="name" id="staticEmail" value="myname">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label" id="email">Email</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" name="email" id="staticEmail" value="email@example.com">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="password1" class="col-sm-2 col-form-label" id="password">Password</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" name="password1" id="mypassword1">
+
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="password2" class="col-sm-2 col-form-label" id="password">Password Confirmation</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" name="password2" id="mypassword2">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" id="email">Membership</label>
+                    <div class="col-sm-10">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Visitor">
+                            <label class="form-check-label" for="inlineRadio1" id="password">Visitor</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Resident">
+                            <label class="form-check-label" for="inlineRadio2" id="password">Resident</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Security">
+                            <label class="form-check-label" for="inlineRadio2" id="password">Security</label>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <input type="checkbox" onclick="showhide()"> <span id="password">Show Password</span>
+
+
+                <div class="col text-center">
+
+                    <button class="btn btn-primary btn-lg " type="submit" role="button" id="mybutton" >Register</button>
+                    
+                </div>
+            </form>
+            <br id="afterme">
+        </div>
+
+
+    </div>
+    <br><br><br><br><br>
+</body>
+<script>
+    
+    function showhide() {
+        var x = document.getElementById("mypassword1");
+        var y = document.getElementById("mypassword2");
+        if (x.type === "password") {
+            x.type = "text";
+            y.type = "text";
+
+        } else {
+            x.type = "password";
+            y.type = "password";
+
+        }
+    }
+
+//    $("#mypassword1, #mypassword2,input[name='inlineRadioOptions'] ").on("change", function() {
+//        console.log(this)
+//        if ($("#mypassword1").val() != "" && $("#mypassword2").val() != "" && $("input[name='inlineRadioOptions']").is(":checked") == true &&
+//            $("#mypassword1").val() == $("#mypassword2").val()
+//        ) {
+//            // $("input[type='submit']").removeAttr("disabled");
+//            $("#mybutton").removeAttr("disabled");
+//
+//        } else {
+//            // $("input[type='submit']").attr("disabled", "disabled");
+//            $("#mybutton").attr("disabled", "disabled");
+//        }
+//    });
+
+//    $("#mypassword2").on("change", function() {
+//        if ($(this).val() != $("#mypassword1").val()) {
+//            alert("unmatched passwords");
+//        }
+//
+//
+//    })
+    
+    
+    var errors = <%- JSON.stringify(errors) %>;
+    console.log(errors);
+    if (errors.length > 0) {
+        if(errors[0].msg == "sucessfully registered"){
+                        $('<div class="alert alert-success" role="alert">' + errors[0].msg + '</div>').insertAfter("#afterme")
+
+        }else{
+        for (var e in errors) {
+            //$("form").append('<div class="alert alert-danger" role="alert">' + errors[e].msg + '</div>');
+            $('<div class="alert alert-danger" role="alert">' + errors[e].msg + '</div>').insertAfter("#afterme")
+        }
+    }
+        }
+
+    //    $("input[name='inlineRadioOptions']").click(function() {
+    //   if($(this).is(':checked')) { 
+    //   
+    //   
+    //   }
+    //    });
+
+</script>
+
+</html>

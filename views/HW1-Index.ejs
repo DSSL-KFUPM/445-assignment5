@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>VMS</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="chrome-extension://mooikfkahbdckldjjndioackbalphokd/assets/prompt.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <link rel="stylesheet" href="/css/HW1-style.css">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-trans navbar-expand-lg navbar-light bg-dark  ">
+        <a class="navbar-brand" href=""><a href="/"><img src="/imgs/KFUPM-logo.png" width="50" height="50" class="d-inline-block align-center" alt="" href=""></a>&emsp;<strong id="text">VMS</strong></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link " href="/logout" id="text2">logout</a>
+                  </li>
+            </ul>
+        </div>
+    </nav>
+    <br><br><br><br><br><br>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-4" ; a><img id="center" src="/imgs/KFUPM-logo.png"></h1>
+
+            <p id="Greetings">Visiting Managment System</p>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-4">
+                <div class="col text-center">
+                    
+                    <% if(membership == "Visitor"){ %>
+                    <a class="btn btn-primary btn-lg " href="/visits" role="button">Visitors</a>
+                    <% } else if (membership == "Resident"){ %>
+                    <a class="btn btn-primary btn-lg " href="/resident" role="button">Residents</a>
+                    <% } else if (membership == "Security"){%>
+                    <a class="btn btn-primary btn-lg " href="/security" role="button">Security</a>
+
+                    <% } %>
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <br><br><br><br><br>
+</body>
+
+</html>

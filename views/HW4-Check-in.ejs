@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>VMS</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="chrome-extension://mooikfkahbdckldjjndioackbalphokd/assets/prompt.js"></script>
+    <link rel="stylesheet" href="/css/HW1-style.css">
+
+</head>
+
+<body>
+     <nav class="navbar navbar-trans navbar-expand-lg navbar-light bg-dark  ">
+        <a class="navbar-brand" href=""><a href="/"><img src="/imgs/KFUPM-logo.png" width="50" height="50" class="d-inline-block align-center" alt="" href=""></a>&emsp;<strong id="text">Visitors</strong></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+    </nav>
+    <br><br><br><br><br><br><br><br><br><br>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-4" ; a><img id="center" src="/imgs/KFUPM-logo.png"></h1>
+
+            <p id="Greetings">Visiting Managment System</p>
+
+            <form action="/check-in" method="POST">
+                <div class="form-group row">
+                    <label for="chnumber" class="col-sm-2 col-form-label" id="email">Check-in Number</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" name="chnumber" id="chnumber"  placeholder="eg, 123456">
+                    </div>
+                </div>
+                <div class="col text-center">
+                    <button class="btn btn-primary btn-lg " type="submit" role="button" id="mybutton" disabled>Check-in</button>
+                </div>
+            </form>
+            <br id="afterme">
+               <% if (errors != '') { %>
+                <% if (errors == "Success" ){%>
+                    <div class="alert alert-success" role="alert"> Succefully checked-in please go to the gate</div>
+
+                    <%}else {%>
+                <div class="alert alert-danger" role="alert"><%=errors%> </div>
+                    <% } %>
+            <% } %>
+        </div>
+
+
+    </div>
+    <br><br><br><br><br>
+</body>
+
+<script>
+    $("#chnumber ").on("change", function() {
+//        console.log(this)
+        if ($("#chnumber").val() != "" ) {
+            // $("input[type='submit']").removeAttr("disabled");
+            $("#mybutton").removeAttr("disabled");
+
+        } else {
+            // $("input[type='submit']").attr("disabled", "disabled");
+            $("#mybutton").attr("disabled", "disabled");
+        }
+    });
+    
+
+</script>
+
+</html>

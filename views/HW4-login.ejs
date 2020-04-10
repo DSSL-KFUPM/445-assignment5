@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>VMS</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="chrome-extension://mooikfkahbdckldjjndioackbalphokd/assets/prompt.js"></script>
+    <link rel="stylesheet" href="/css/HW1-style.css">
+
+</head>
+
+<body>
+     <nav class="navbar navbar-trans navbar-expand-lg navbar-light bg-dark  ">
+        <a class="navbar-brand" href=""><a href="/"><img src="/imgs/KFUPM-logo.png" width="50" height="50" class="d-inline-block align-center" alt="" href=""></a>&emsp;<strong id="text">Visitors</strong></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link glow " href="/check-in" id="text2">Check-in</a>
+                  </li>
+            </ul>
+        </div>
+    </nav>
+    <br><br><br><br><br><br><br><br><br><br>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-4" ; a><img id="center" src="/imgs/KFUPM-logo.png"></h1>
+
+            <p id="Greetings">Visiting Managment System</p>
+            
+            <form action="/login" method="POST">
+                <div class="form-group row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label" id="email">Email</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" name="email" id="staticEmail" value="email@example.com">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputPassword" class="col-sm-2 col-form-label" id="password">Password</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" name="password1" id="inputPassword">
+                    </div>
+                </div>
+                <div class="col text-center">
+                    <button class="btn btn-primary btn-lg " type="submit" role="button" id="mybutton" disabled>Login</button>
+                    <a class="btn btn-primary btn-lg " href="/register" role="button">Register</a>
+                </div>
+            </form>
+            <br id="afterme">
+               <% if (error != '') { %>
+                <div class="alert alert-danger" role="alert"><%=error%> </div>
+            <% } %>
+        </div>
+
+
+    </div>
+    <br><br><br><br><br>
+</body>
+
+<script>
+    $("#staticEmail, #inputPassword ").on("change", function() {
+//        console.log(this)
+        if ($("#staticEmail").val() != "" && $("#inputPassword").val() != "") {
+            // $("input[type='submit']").removeAttr("disabled");
+            $("#mybutton").removeAttr("disabled");
+
+        } else {
+            // $("input[type='submit']").attr("disabled", "disabled");
+            $("#mybutton").attr("disabled", "disabled");
+        }
+    });
+    
+
+</script>
+
+</html>
