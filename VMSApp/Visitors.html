@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="/css/HW2stylesheet.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <title>VMS - Visitors</title>
+
+    <link rel="icon" type="image/ico" href="/imgs/KFUPM - green icon.jpg" />
+
+</head>
+
+
+<body class="body">
+
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="/Visitors">
+            <img src="/imgs/KFUPM - green icon.jpg" class="d-inline-block align-top" id="icon-logo" alt=""> Visiting Management System
+        </a>
+        <div>
+            <a id="page-name" href="/Visitors/new">Add New Visit</a>
+        </div>
+        <div>
+            <a id="page-name">VISITORS</a>
+        </div>
+    </nav>
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display">VISITS HISTORY</h1>
+            <hr class="my-2">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+
+                        <th scope="col">Resident ID</th>
+                        <th scope="col">Visiting Date</th>
+                        <th scope="col">Arrival Time</th>
+                        <th scope="col">Departure Time</th>
+
+                        <th scope="col">Car Brand</th>
+
+                        <th scope="col">Car Model</th>
+
+                        <th scope="col">Car Year</th>
+
+                        <th scope="col">Car Color</th>
+                        <th scope="col">Vehicle Registration Plate</th>
+
+                        <th scope="col">Destination</th>
+                        <th scope="col">Check Out</th>
+
+
+                    </tr>
+                </thead>
+                <tbody id="history">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+
+
+</body>
+<script>
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (this.readyState == 4 & this.status == 200) {
+            var data = xhr.responseText;
+            var visits_history = JSON.parse(data);
+            var sh = 0;
+            for (var s = 0; s < visits_history.length; s++) {
+                if (visits_history[s].name == "Saeed Saad") {
+                    sh++;
+                    $("#history").append("<tr><th>" + (sh) + "<td><a href='/Visitors/visits_history[s].hostid'>" + visits_history[s].hostid + "<td>" + visits_history[s].date + "<td>" + visits_history[s].time + "<td>" + visits_history[s].dtime + "<td>" + visits_history[s].car_make + "<td>" + visits_history[s].car_model + "<td>" + visits_history[s].car_year + "<td>" + visits_history[s].car_color + "<td>" + visits_history[s].plate_number + "<td>" + visits_history[s].destination + "<td>" + visits_history[s].checked_out);
+                }
+            }
+        }
+    };
+    xhr.open("GET", "http://localhost:3000/visits.json", true);
+    xhr.send();
+</script>
+
+</html>

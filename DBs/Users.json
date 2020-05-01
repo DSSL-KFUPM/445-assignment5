@@ -1,0 +1,8 @@
+{"_id":{"$oid":"5e822a64f3065d2878803ab5"},"fullname":"Husain Alrajjal","userid":"2002020200","email":"s@s.com","mobile_number":"0555500505","password":"1234","role":"Visitor","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5e822b1dcfee594a74b19339"},"fullname":"Ali Alrajjal","userid":"1002020000","email":"q@q.com","mobile_number":"0505005050","password":"12345","role":"Security","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5e8245993d15a13f4460c785"},"fullname":"Hasan Majid","userid":"1000200200","email":"q@q.com","mobile_number":"0505050505","password":"1234","role":"Resident","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5e82499e5844e00fd8718fa0"},"fullname":"Mousa Ahmad","userid":"9020902090","email":"a@a.c","mobile_number":"0505050505","password":"123","role":"Security","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5e824fa09e716f35740ef059"},"fullname":"Ali M","userid":"1234567890","email":"0@0.0","mobile_number":"0505050505","password":"123","role":"Resident","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5e84251f9078324b1c8bdaa8"},"fullname":"Hussain Ali","userid":"2000200022","email":"a@a.a","mobile_number":"0505050500","password":"12","role":"Visitor","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5e8db4217269943b648663b6"},"fullname":"Hassan Muhammad","userid":"2009384742","email":"a@a.a","mobile_number":"0500505005","password":"1","role":"Visitor","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5e8ee3675ba8cd4f481c9a1e"},"fullname":"1234 234","userid":"2345111111","email":"a@aa.a.a","mobile_number":"1231231232","password":"1","role":"Visitor","__v":{"$numberInt":"0"}}

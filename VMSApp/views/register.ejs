@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="/css/HW2stylesheet.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <title>KFUPM - Visiting Management System</title>
+
+    <link rel="icon" type="image/ico" href="/imgs/KFUPM - green icon.jpg" />
+
+
+</head>
+
+
+<body class="body">
+
+
+    <div class="jumbotron jumbotron-fluid" id="home-jumbotron">
+        <div class="container">
+            <img src="https://rayanaj.github.io/images/KFUPMLogo.png" alt="KFUPM logo" id="KFUPM-logo">
+            <h1 class="display-4">Visiting Management System</h1>
+            <hr class="my-5">
+            <div class="btn-group btn-group-justified btn-group-lg" id="Main-buttons">
+                <div class="container" style="text-align: center">
+                    <form action="/register" method="POST">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> Full Name</span>
+                            </div>
+                            <input type="text" name="first_name" placeholder="First name" class="form-control">
+                            <input type="text" name="last_name" placeholder="Last name" class="form-control">
+                        </div>
+
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> ID</span>
+                            </div>
+                            <input type="tel" name="user_id" placeholder="ID" class="form-control" pattern="[0-9]{10}" required>
+                        </div>
+
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> Email</span>
+                            </div>
+                            <input type="email" name="email" placeholder="example@example.com" class="form-control">
+                        </div>
+
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> Mobile No.</span>
+                            </div>
+                            <input type="tel" name="mobile_no" placeholder="0555555555" class="form-control" pattern="[0-9]{10}" required>
+                        </div>
+
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> Password</span>
+                            </div>
+                            <input type="password" name="password" placeholder="password" class="form-control">
+                        </div>
+
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> Role</span>
+                            </div>
+                            <select class="form-control" name="user_role" id="user_role">
+                              <option>Visitor</option>
+                              <option>Resident</option>
+                              <option>Security</option>
+                            </select>
+
+                        </div>
+                        <br>
+                        <button class="btn btn-success" type="submit"> Register</button>
+                        <a href="/login" class="btn btn-info">Login if you account</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

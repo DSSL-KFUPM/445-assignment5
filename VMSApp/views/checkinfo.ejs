@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="/css/HW2stylesheet.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <title>VMS - Visitors</title>
+
+    <link rel="icon" type="image/ico" href="/imgs/KFUPM - green icon.jpg">
+
+</head>
+
+
+<body class="body">
+
+    <div class="jumbotron jumbotron-fluid" id="home-jumbotron">
+        <div class="container">
+            <img src="https://rayanaj.github.io/images/KFUPMLogo.png" alt="KFUPM logo" id="KFUPM-logo">
+            <div class="btn-group btn-group-justified btn-group-lg" id="Main-buttons">
+                <div class="container" style="text-align: center">
+                    <h1 class="display">ViSiT INFORMATION</h1>
+                    <hr class="my-2">
+                    <table class="table">
+                        <tr>
+                            <td>Visitor Name: </td>
+                            <td>
+                                <%= name%>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Visitor ID: </td>
+                            <td>
+                                <%= name_nat_id%>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Host Name: </td>
+                            <td>
+                                <%= host%>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Host ID: </td>
+                            <td>
+                                <%= hostid%>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Date: </td>
+                            <td>
+                                <%= date%>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Duration: </td>
+                            <td>
+                                <%= time%> -
+                                    <%= dtime%>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Car Info: </td>
+                            <td>
+                                <%= car_make%> -
+                                    <%= car_model%> -
+                                        <%= car_year%> -
+                                            <%= car_color%> -
+                                                <%= plate_number%>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Destination: </td>
+                            <td>
+                                <%= destination%>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Pin: </td>
+                            <td>
+                                <%= pin%>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Status: </td>
+                            <td>
+                                <%= checked_out%>
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="/css/HW2stylesheet.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> -->
+    <!-- <script src="HW2Scripts.js"></script> -->
+    <title>VMS - Visitors</title>
+
+    <link rel="icon" type="image/ico" href="/imgs/KFUPM - green icon.jpg" />
+
+</head>
+
+
+<body class="body">
+
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="/Visitors">
+            <img src="/imgs/KFUPM - green icon.jpg" class="d-inline-block align-top" id="icon-logo" alt=""> Visiting Management System
+        </a>
+        <div>
+            <span>
+                <a id="page-name" href="/">Logout</a>
+            </span>
+            <a id="page-name">|  VISITORS</a>
+        </div>
+    </nav>
+
+
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display">NEW VISIT REQUEST</h1>
+            <hr class="my-2">
+
+            <form action="/Visitors" method="POST">
+                <div class="form-group row">
+                    <label for="example-text-input" class="col-2 col-form-label"> Visitor Full Name</label>
+                    <div class="col-10">
+                        <input class="form-control" type="text" name="name" id="Vname">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="example-number-input" class="col-2 col-form-label">Visitor National ID</label>
+                    <div class="col-10">
+                        <input class="form-control" type="number" name="name_nat_id" id="VID">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="example-number-input" class="col-2 col-form-label">Resident KFUPM ID</label>
+                    <div class="col-10">
+                        <input class="form-control" type="number" name="hostid" id="RKID">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="example-number-input" class="col-2 col-form-label">Resident Name</label>
+                    <div class="col-10">
+                        <input class="form-control" type="text" name="host" id="RName">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="example-date-input" class="col-2 col-form-label">Date</label>
+                    <div class="col-10">
+                        <input class="form-control" type="date" name="date" placeholder="2011-08-19" id="date">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="example-time-input" class="col-2 col-form-label">Arrival Time</label>
+                    <div class="col-10">
+                        <input class="form-control" type="time" name="time" placeholder="13:45:00" id="time">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="example-time-input" class="col-2 col-form-label">Departure Time</label>
+                    <div class="col-10">
+                        <input class="form-control" type="time" name="dtime" placeholder="13:45" id="d_time">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="example-time-input" class="col-2 col-form-label">Car Brand</label>
+                    <div class="col-10">
+                        <select class="form-control form-control" name="car_make" id="cbrand">
+                    <option>Choose..</option>
+                    <option>Toyota</option>
+                    <option>Hyondai</option>
+                    <option>Mazda</option>
+                </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="example-time-input" class="col-2 col-form-label">Car Model</label>
+                    <div class="col-10">
+                        <select class="form-control form-control" name="car_model" id="cmodel">
+                    <option>Choose..</option>
+                    <option>Camry</option>
+                    <option>Accent</option>
+                    <option>Lexus</option>
+                    <option>06</option>
+                </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="example-time-input" class="col-2 col-form-label">Car year</label>
+                    <div class="col-10">
+                        <select class="form-control form-control" name="car_year" id="cyear">
+                    <option>Choose..</option>
+                    <option>2003</option>
+                    <option>2013</option>
+                    <option>2019</option>
+                </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="example-time-input" class="col-2 col-form-label">Car Color</label>
+                    <div class="col-10">
+                        <select class="form-control form-control" name="car_color" id="ccolor">
+                    <option>Choose..</option>
+                    <option>White</option>
+                    <option>Black</option>
+                    <option>Green</option>
+                </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="example-time-input" class="col-2 col-form-label">Vehicle Registration Plate</label>
+                    <div class="col-10">
+                        <input class="form-control" type="text" name="plate_number" id="VRP">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="example-time-input" class="col-2 col-form-label">Destination </label>
+                    <div class="col-10">
+                        <select class="form-control form-control" name="destination" id="dest">
+                    <option>Choose..</option>
+                    <option>Building 22</option>
+                    <option>Building 826</option>
+                    <option>Student KFUPM Mall</option>
+                </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Request</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+<!-- <script>
+    var lastindex = 2;
+
+    function submit_form() {
+        var RKID = document.getElementById('RKID').value;
+        var vdate = document.getElementById('date').value;
+        var vtime = document.getElementById('time').value;
+        var vdtime = document.getElementById('d_time').value;
+        var car_make = document.getElementById('cbrand').value;
+        var car_model = document.getElementById('cmodel').value;
+        var car_year = document.getElementById('cyear').value;
+        var car_color = document.getElementById('ccolor').value;
+        var plate_number = document.getElementById('VRP').value;
+        var destination = document.getElementById('dest').value;
+
+        if (RKID == "" || vdate == "" || vtime == "" || vdtime == "" || car_make == "Choose.." || car_model == "Choose.." || car_year == "Choose.." || car_color == "Choose.." || plate_number == "" || destination == "Choose..") {
+
+        } else {
+            lastindex++;
+            $("#history").append("<tr> <th> " + (lastindex) + " <td> " + RKID + " <td> " + vdate + " <td> " + vtime + " <td> " + vdtime + " <td> " + car_make + " <td> " + car_model + " <td> " + car_year + " <td> " + car_color + " <td> " + plate_number + " <td> " + destination + " <td> NO ");
+        }
+
+    }
+</script> -->
+
+</html>
